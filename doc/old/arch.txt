@@ -1,0 +1,20 @@
+Master Server
+	Windows 7? linux? distro? 32bit? 64bit?
+	Apache
+	PHP
+	MySQL?
+	> sync requests
+
+Amazon S3
+	> client codebase
+
+Client Machines
+	> pull codebase from s3)
+	> sync data with master server)
+	windows 8 INTEL!
+	touch screens w/ keyboards
+	node js backend on localhost
+	sqlite data storage
+	dedicated login for app
+	> roster app
+	> survey app

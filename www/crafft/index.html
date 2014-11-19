@@ -1,0 +1,116 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<HTML 
+xmlns="http://www.w3.org/1999/xhtml"><HEAD><TITLE>Interactive CRAFFT</TITLE><!-- InstanceBegin template="/Templates/crafft_q1.dwt" codeOutsideHTMLIsLocked="false" --><!-- InstanceBeginEditable name="doctitle" -->
+<META content="text/html; charset=unicode" http-equiv=Content-Type>
+        <title>CRAFFT Site</title>
+        <script src="includes/jquery-1.7.1.min.js"></script>
+        <script src="includes/effects.core.js"></script>
+        <script src="includes/config.js"></script>
+        <script src="includes/common.js"></script>
+		<script src="includes/webtoolkit.sha1.js"></script>
+
+		<link href="styles.css" rel="stylesheet" type="text/css" />
+
+        <script type="text/javascript">
+		function GetURLParameter(sParam)  
+		{  
+     	   var sPageURL = window.location.search.substring(1);  
+ 		   var sURLVariables = sPageURL.split('&');  
+			
+  		   for (var i = 0; i < sURLVariables.length; i++)   
+  		   {  
+    		     var sParameterName = sURLVariables[i].split('=');  
+      		   	 
+				 if (sParameterName[0] == sParam)   
+      		     {  
+        		     return sParameterName[1];  
+       		     }  
+    		 }  
+ 		 } 
+		
+		var username = GetURLParameter('username');  
+		var status = GetURLParameter('status');  
+		
+		function check_password() {
+                
+           var decoded = $("#hash").attr("value").trim();
+		   var hash = "995d34295b1d73f4ba6584b35baf9c30bd6be8a7";
+		   //var username = $("#username").attr("value").trim();
+						
+           if (decoded == hash) 
+           {
+               window.location = "redirect-crafft.html?username="+username; 
+                                
+           }
+           else {
+					$("#msg span").show();
+                    $("#msg span").html("The CRAFFT access code you entered is invalid, please try again.");
+                    $("#msg").fadeIn().css("background-color", "#ff0000").animate({backgroundColor: "#ffffff"}, 2000);
+                 }        
+		}
+		
+		function check_status() {
+		
+			if (status == "complete") {
+				$("#status-msg").show();
+				$("#status-msg-bg").fadeIn().css("background-color", "#ff0000").animate({backgroundColor: "#ffffff"}, 3000);
+			} 
+		}
+        </script>
+
+<style>
+	.hide{display:none;}
+</style>
+
+</head>
+<body onload="check_status()">
+
+<div id="container">
+
+	 <div id="header">
+      <div id="header-rule-box"><img src="nav-images/crafft-logo.gif" alt="CRAFFT" name="logo" width="172" height="54" id="logo" />
+        <div class="barZero" id="bar-progress"></div>
+      </div>
+	  </div>
+	  
+<div id="question-box">
+	<form action="redirect-crafft.asp" method="post" name="crafft" id="crafft">
+
+	<input type="hidden" name="username" id="username" value="" />
+	
+	<div id="login" data-next-elem="q1" class="hide1">
+	
+      <div id="welcome-box">
+	  
+      <p><strong>Welcome to the CRAFFT program.</font></strong></p>
+	  
+	  <div id="msg" class="hide"><br><font size="+1" color="blue"><u><span>Test</span></u></font></div>
+	  <div id="status-msg-bg">
+	  <div id="status-msg" class="hide">
+	  			<hr>
+				<p><strong><font color="blue">You have completed the CRAFFT program.</font></strong>
+				<font color="blue">(Please let the person who started this program for you know that you have finished.)</font></p>
+				<hr>
+	  </div>
+	  </div>
+	  
+	  <p>Please enter your CRAFFT access code:
+      <input type="password" name="decoded" id="decoded" size="20" value="" onkeyup="this.form.hash.value = SHA1(this.form.decoded.value)" /></p>
+      <div class="hide"><p><input type="text" name="hash" id="hash" value="" style="width: 336px;" ></p></div>
+      <p>Make sure the participant is ready to take the CRAFFT before clicking NEXT, as page timing begins on the following page. Click NEXT to begin the CRAFFT screen.</p>
+	  <p>&nbsp;</p>
+      </div>
+	   <div id="footer">
+	   <img src="nav-images/ceasar-logo.gif" alt="CeASAR" width="138" height="47" hspace="30" />
+	   <img src="nav-images/childrens-hospital.gif" width="228" height="47" alt="Children's Hospital" />
+   	   <a href="#" id="login_a" onclick="javascript:check_password()"><img src="images/next.png" alt="next" name="next" width="171" height="47" border="0" id="next" /></a>
+       </div>
+	   
+	</div>
+
+  </form>
+  </div>
+
+</div><!--end of container!-->
+</body>
+</html>

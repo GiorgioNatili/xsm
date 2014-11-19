@@ -1,0 +1,72 @@
+page,name,type,typeDetails,required,text,header,audio,branchOnValue,branchToPage
+demo,fname,text,,optional,First name,,,,
+demo,lname,text,,optional,Last name,,,,
+demo,mrn,text,,optional,MRN,,,,
+demo,dob,date,,required,Date of Birth,,,,
+demo,gender,Female | Male,,warning,Gender,,,,
+demo,established,Yes | No,,warning,Established patient?,,,,
+demo,mailed,Yes | No,,optional,Mailed a letter,,,,
+demo,emailed,Yes | No,,optional,Emailed a message,,,,
+demo,phoned,Yes | No,,optional,Phoned,,,Complex,
+siteCHBDoctor,siteCHBDoctor,Dr Bottino | Sonia Chalfin | Dr Cheng | Dr Conroy | Dr Cox | Dr Davis | Dr Hauptman | Dr Holder-Niles | Jane Hopkins-Walsh | Dr Iiowite | Dr Jean-Mary | Dr Joseph | Dr McCarthy | Dr Nethersole | Dr Rea | Dr Samuels | Dr Simmons | Dr Sprecher | Dr Starmer | Dr Teasdale | Dr Trubilla | Dr Weissert | Other,vertical,required,Who are you seeing today at Boston Childrens?,,,*,setDoctor
+siteLONDoctor,siteLONDoctor,Corrine Arrighini | Dr Binney | Damarys Caicedo | Dr Cloherty | Sarah Geary | Dr Koppenheffer | Dr Manion | Joan McMenemy | Dr Menzin | Dr Michaels | Dr O'Connor | Dr  Ryan | Dr Vernacchio | Dr Young | Other,vertical,required,Who are you seeing today at Longwood Pediatrics?,,,*,setDoctor
+siteLEXDoctor,siteLEXDoctor,Dr Arthur | Jane Berman | Dr Garnett |  Dr Gine-Nokes | Meg Guimond | Ramey Harris-Tatar |  Dr Lock | Dr Mailloux | Kathy Manchester |  Dr Terry | Dr Wornham | Sarah Zombek | Other,vertical,required,Who are you seeing today at Lexington Pediatrics?,,,*,setDoctor
+siteCHADoctor,siteCHADoctor,Dr Brooks | Dr Another | Other,vertical,required,Who are you seeing today at Cambridge Health Alliance?,,,*,setDoctor
+siteTMCDoctor,siteTMCDoctor,Dr Grubb | Dr Lee | Dr Siesennop | Other,vertical,required,Who are you seeing today at Tufts Medical Center?,,,*,setDoctor
+siteEBNDoctor,siteEBNDoctor,Dr Silva | Other,vertical,required,Who are you seeing today at East Boston Neighborhood Health Center?,,,*,setDoctor
+siteTSTDoctor,siteTSTDoctor,Dr Yes | Dr No | Other,vertical,required,Who are you seeing today?,,,*,setDoctor
+setDoctor,setDoctor,function,,optional,setDoctorDemographics,,,,
+Asked,Asked,Yes | No,,required,Patient asked to participate?,,,Complex,
+NoDOB,NoDOB,OK,,required,There is no Date of Birth entered for this patient. You must enter the correct DOB first and then you can continue.,,,,
+NotAsked,NotAsked,No show ; Rescheduled; Arrived too late ; Not enough time ; RA with other participant ; RA unavailable ; Patient not eligible ; Other,vertical,required,Why was the patient not asked?,,,Patient not elligible,Asked
+Response,Response,Agreed | Not now | Refused  |Inelligible,responses4 horizontal,required,Response to invitation:,,,,
+Response,confidential,Yes | No | Don't know,,warning,"Is the patient receiving confidential services at this vist (for example, birth control)?",,,,
+Assent9-11,Assent9-11,Yes | Not yet | No,responses3 horizontal,required,Obtained adolescent assent,,,,
+Consent9-11,Consent9-11,Yes | Not yet | No,responses3 horizontal,required,Obtained parent (or guardian) assent?,,,*,setVisitStatus
+Assent12-17,Assent12-18,Yes | Not yet | No,responses3 horizontal,required,Obtained adolescent assent,,,*,setVisitStatus
+Consent18,Consent18,Yes | Not yet | No,responses3 horizontal,required,Obtained adolescent assent,,,*,setVisitStatus
+Refused,Refused,No time ; Not interested ; Parents didn't want to ; Concerned with privacy ; Would consider future participation; Other,vertical,required,Reason for refusal:,,,*,setVisitStatus
+Inelligible,Inelligible,Already participated ; No email or access to computer ; Not available for follow up ; Accute condition ; No English ; Other,vertical,required,Reason not elligible:,,,,
+setVisitStatus,setVisitStatus,function,,optional,setStatusAfterVisit,,,,
+contact,isDemoDoctor,Yes | No,,optional,Are you seeing %Doctor today?,"<span class=""head1"">Participant Contact Information Sheet</span></br><span class=""head2"">Instructions: We are collecting this information in order to stay in touch with you as the study proceeds. The contacts that you provide us with will only be used in case we are unable to communicate with you. In no case will the confidential information you provide in the study be given to anyone you list below. Please speak with the Research Assistant if you have any questions.</span></br><span class=""head3"">Please provide the following email address:</span>",,,
+contact,address1,text,,optional,Address1,,,,
+contact,address2,text,,optional,Address2,,,,
+contact,city,text,,optional,City,,,,
+contact,state,text,,optional,State,,,,
+contact,zip,text,,optional,Zip Code,,,,
+contact,EmailAddress1,text,,required,Email address 1:,,,,
+contact,emailAddress2,text,,optional,Email address 2:,,,,
+contact,emailAddress3,text,,optional,Email address 3:,,,,
+contact,parentEmail1,text,,warning,Parent email address 1:,,,,
+contact,parentEmail2,text,,optional,Parent email address 2:,,,,
+contact,particCellPhone,numeric,,optional,Your cell phone:,,,,
+contact,particCellProvider,AT&T |Verizon | T-mobile |Sprint |Other,vertical,optional,Your cell phone provider:,,,,
+contact,particWorkPhone,numeric,,optional,Your home phone:,,,,
+contact,particHomePhone,numeric,,optional,Your work phone (if any):,,,,
+contact,parentCellPhone1,numeric,,optional,Your parent/guardian's cell phone:,,,,
+contact,parentCellPhone2,numeric,,optional,Your parent/guardian's cell phone:,,,,
+contact,emergency1Name,text,,optional,Name:,,,,
+contact,emergency1Rela,text,,optional,Relationship to you:,,,,
+contact,emergency1Phone,numeric,,optional,Phone number:,,,,
+contact,emergency2Name,text,,optional,Name:,,,,
+contact,emergency2Rela,text,,optional,Relationship to you:,,,,
+contact,emergency2Phone,numeric,,optional,Phone number:,,,,
+contact,methodContact1,Your personal email address | Your parent's email address | A home phone call | A work phone call | A cell phone call | A cell phone text,vertical,warning,What is your most preferred way of being reached?,,,,
+contact,methodContact2,Your personal email address | Your parent's email address | A home phone call | A work phone call | A cell phone call | A cell phone text,vertical,optional,What is your next most preferred way of being reached?,,,,
+contact,textMessageOK,Yes | No,,optional,Is it OK for us to contact you by text message to your phone?,,,Complex,
+visitCHBDoctor,visitCHBDoctor,Dr Bottino | Sonia Chalfin | Dr Cheng | Dr Conroy | Dr Cox | Dr Davis | Dr Hauptman | Dr Holder-Niles | Jane Hopkins-Walsh | Dr Iiowite | Dr Jean-Mary | Dr Joseph | Dr McCarthy | Dr Nethersole | Dr Rea | Dr Samuels | Dr Simmons | Dr Sprecher | Dr Starmer | Dr Teasdale | Dr Trubilla | Dr Weissert | Other,vertical,required,Who are you seeing today at Boston Childrens?,,,*,setVisitDoctor
+visitLONDoctor,visitLONDoctor,Corrine Arrighini | Dr Binney | Damarys Caicedo | Dr Cloherty | Sarah Geary | Dr Koppenheffer | Dr Manion | Joan McMenemy | Dr Menzin | Dr Michaels | Dr O'Connor | Dr  Ryan | Dr Vernacchio | Dr Young | Other,vertical,required,Who are you seeing today at Longwood Pediatrics?,,,*,setVisitDoctor
+visitLEXDoctor,visitLEXDoctor,Dr Arthur | Jane Berman | Dr Garnett |  Dr Gine-Nokes | Meg Guimond | Ramey Harris-Tatar |  Dr Lock | Dr Mailloux | Kathy Manchester |  Dr Terry | Dr Wornham | Sarah Zombek | Other,vertical,required,Who are you seeing today at Lexington Pediatrics?,,,*,setVisitDoctor
+visitCHADoctor,visitCHADoctor,Dr Brooks | Dr Another | Other,vertical,required,Who are you seeing today at Cambridge Health Alliance?,,,*,setVisitDoctor
+visitTMCDoctor,visitTMCDoctor,Dr Grubb | Dr Lee | Dr Siesennop | Other,vertical,required,Who are you seeing today at Tufts Medical Center?,,,*,setVisitDoctor
+visitEBNDoctor,visitEBNDoctor,Dr Silva | Other,vertical,required,Who are you seeing today at East Boston Neighborhood Health Center?,,,*,setVisitDoctor
+visitTSTDoctor,visitTSTDoctor,Dr Yes | Dr No | Other,vertical,required,Who are you seeing today?,,,*,setVisitDoctor
+setVisitDoctor,setVisitDoctor,function,,optional,setVisitDoctor,,,,
+schoolGrade,schoolGrade,2nd grade | 3rd grade | 4th grade | 5th grade | 6th grade | 7th grade | 8th grade | 9th grade | 10th grade | 11th grade | 12th grade | College freshman | College sophomore | College junior | College senior | Not attending school,vertical,warning,What school grade are you in/what is the highest grade you have completed?,,,,
+hispanic,hispanic,Yes | No,,warning,Are you of Hispanic or Latino origin?,,,,
+race,race,American Indian or Alaska Native ; Asian ; Black or African American ; Native Hawaiian or other Pacific Islander ; White ; Other,vertical,warning,What is your race? (Check all that apply),,,,
+parentHome,parentHome,One | Two or more | None or Foster care ,responses3 horizontal,warning,How many parents are living with you at home?,,,,
+parentEduca,parentEducation,"8th grade or less | >8th grade, but not a high school graduate | High school graduate, or GED | Business, trade, or vocational school after high school | Some college but did not graduate | Graduated college or university | Professional degree beyond 4-year college | I don't know ",vertical,warning,"Of the parent(s) living with you at home, what is the highest level of education that s/he completed? (Please choose highest of either parent at home)",,,,
+PermitLicense,PermitLicense,"No, neither | Yes, a learner's permit only | Yes, a driver's license",responses3 horizontal,warning,Do you currently have a learner's permit or driver's license?,,,,
+NumberCars,NumberCars,None | One | Two | Three or more,responses4 horizontal,warning,How many cars does your family own?,,,,
+setContactStatus,setContactStatus,function,,optional,setStatusAfterContact,,,,

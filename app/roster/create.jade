@@ -1,0 +1,8 @@
+div.modal.contactWindow(tabindex="-1" role="dialog")
+    div.modal-dialog: div.modal-content
+        div(ng-controller="createCtrl")
+            label Site
+            select(ng-model="clinicSite"
+            ng-options="label as label for (label, value) in sites")
+
+            button.btn(ng-click="submit()") Submit

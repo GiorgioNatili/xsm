@@ -1,0 +1,9 @@
+2013-01-19 02:41
+SELECT * FROM session_tool3_cards
+							WHERE id_stimulant_fk IN ()
+							ORDER BY id_stimulant_fk
+					
+You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')
+							ORDER BY id_stimulant_fk' at line 2
+-------------------------------------------------------------------------
+

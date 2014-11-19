@@ -1,0 +1,9 @@
+.overlay(ng-controller="loginCtrl"): div.dialog
+  h1 CeASAR Study Manager
+  label User Name
+  input(autofocus='true' type='text' ng-model='user')
+  label Password
+  input(type='password' ng-model='password' ng-keypress="maybeEnter($event, user, password)")
+  button.btn(type='button'
+  ng-click='tryCredentials(user, password)') Login
+  p.error(ng-if='badPassword') Invalid username/password.

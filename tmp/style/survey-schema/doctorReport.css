@@ -1,0 +1,139 @@
+/* line 3, ../../../app/survey-schema/doctorReport.scss */
+#report {
+  width: 700px;
+  margin: 0 auto;
+}
+/* line 6, ../../../app/survey-schema/doctorReport.scss */
+#report dt, #report dd {
+  display: inline-block;
+}
+/* line 9, ../../../app/survey-schema/doctorReport.scss */
+#report dt {
+  font-size: 100%;
+  color: #888;
+}
+/* line 13, ../../../app/survey-schema/doctorReport.scss */
+#report dd {
+  padding-left: 8px;
+  padding-right: 12px;
+  font-size: 120%;
+}
+/* line 18, ../../../app/survey-schema/doctorReport.scss */
+#report .bold {
+  font-weight: bold;
+}
+/* line 21, ../../../app/survey-schema/doctorReport.scss */
+#report .do, #report .blue {
+  color: #1616a5;
+}
+/* line 24, ../../../app/survey-schema/doctorReport.scss */
+#report p.do {
+  font-weight: bold;
+  margin-top: 12px;
+  margin-bottom: 6px;
+}
+/* line 29, ../../../app/survey-schema/doctorReport.scss */
+#report .risk {
+  position: relative;
+}
+/* line 32, ../../../app/survey-schema/doctorReport.scss */
+#report .risk img {
+  position: absolute;
+  height: 120px;
+  width: 100px;
+  top: -20px;
+}
+/* line 38, ../../../app/survey-schema/doctorReport.scss */
+#report .section {
+  padding-top: 6px;
+}
+/* line 41, ../../../app/survey-schema/doctorReport.scss */
+#report .badge {
+  display: block;
+  clear: left;
+  float: left;
+  width: 120px;
+  margin-right: 12px;
+  margin-left: 12px;
+}
+/* line 49, ../../../app/survey-schema/doctorReport.scss */
+#report .useLine {
+  margin-bottom: 6px;
+}
+/* line 52, ../../../app/survey-schema/doctorReport.scss */
+#report .good {
+  background-color: #8c4;
+}
+/* line 55, ../../../app/survey-schema/doctorReport.scss */
+#report .bad {
+  background-color: #900;
+}
+/* line 58, ../../../app/survey-schema/doctorReport.scss */
+#report li {
+  list-style-position: inside;
+  text-indent: -1em;
+  margin-left: 12px;
+  font-style: italic;
+}
+/* line 64, ../../../app/survey-schema/doctorReport.scss */
+#report .i {
+  font-style: italic;
+}
+/* line 67, ../../../app/survey-schema/doctorReport.scss */
+#report .low {
+  background-color: #8c4;
+}
+/* line 70, ../../../app/survey-schema/doctorReport.scss */
+#report .medium {
+  background-color: #fc0;
+}
+/* line 73, ../../../app/survey-schema/doctorReport.scss */
+#report .high {
+  background-color: #d20;
+}
+/* line 76, ../../../app/survey-schema/doctorReport.scss */
+#report .note {
+  color: #888;
+}
+
+/* line 80, ../../../app/survey-schema/doctorReport.scss */
+.doctor-btn {
+  position: fixed;
+  left: -38px;
+  bottom: 100px;
+  padding: 12px;
+  transform: rotate(90deg);
+  background-color: #eecc11;
+  color: white;
+  visibility: hidden;
+}
+/* line 89, ../../../app/survey-schema/doctorReport.scss */
+.doctor-btn:hover {
+  text-decoration: none;
+}
+
+/* line 93, ../../../app/survey-schema/doctorReport.scss */
+.doctor-report {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: white;
+  z-index: 1000;
+}
+
+/* line 99, ../../../app/survey-schema/doctorReport.scss */
+.showBtn {
+  visibility: visible;
+}
+
+/* line 102, ../../../app/survey-schema/doctorReport.scss */
+.hideBtn {
+  visibility: hidden;
+}
+
+/* line 105, ../../../app/survey-schema/doctorReport.scss */
+.inactiveBtn {
+  background-color: #ddd;
+}

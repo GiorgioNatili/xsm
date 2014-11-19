@@ -1,0 +1,140 @@
+div.tfb-wrap: div.tfb
+    div.overlay-wrap
+        div.overlay(ng-if='question == "start"')
+            p Orient yourself to the calendar by adding birthdays, vacations, life events, etc.:
+            p
+                a.left(ng-click='a.addEvent()') Add Event
+                a.left(ng-click='a.removeEvent()') Remove Event
+                a.right(ng-click='a.startSubstance()') Next Question
+
+        div.overlay(ng-if='question == "removeEvent"')
+            p Tap days to remove events from:&nbsp;
+                a.right(ng-click='a.gotoStart()') Done
+
+        div.overlay(ng-if='question == "promptEventText"')
+            p Enter a short name for your event:
+            p
+                input(type='text' ng-model='$parent.eventText' enter='a.tapToAddEvent(eventText)')
+                span.left.error(ng-show='error') &nbsp;You must enter a valid name.
+                a.right(ng-click='a.tapToAddEvent(eventText)') Done
+            p Or select from one of the common names below:
+            p(ng-repeat="evt in standardEvents | filter:eventText:startsWith")
+                a.drug(ng-click="a.tapToAddEvent(evt)") {{evt}}
+
+        div.overlay(ng-if='question == "tapToAddEvent"')
+            p Tap days when the event '{{eventText}}' occurred:
+                a.right(ng-click='a.gotoStart()' ng-show="tapped") Done
+
+        div.overlay(ng-if='question == "howManyDays"')
+            p How many days have you used {{ substance }} since {{ startDate }}?
+            p
+                input.left(type='number' ng-model='$parent.substanceDays' enter="a.daysEntered(substanceDays)")
+                span.left.error(ng-show='error') &nbsp;You must enter a valid number.
+                a.right(ng-click='a.daysEntered(substanceDays)') Next
+
+        div.overlay(ng-if='question == "promptUseOnDays"')
+            p Tap days to mark {{ substance }} use. Each tap corresponds to <select ng-model="$parent.hitMultiplier" ng-options="m for m in multipliers"></select> {{ hit }}(s).&nbsp;
+                a.right(ng-click="a.startSubstance()"  ng-show="tapped") Next
+                a.left(ng-click="a.fixDayUseMistakes()"  ng-show="tapped") Fix Mistakes
+
+        div.overlay(ng-if='question == "fixDayUse"')
+            p Tap days to clear {{ fixPrompt }}.&nbsp;
+                a.right(ng-click="a.resumeDayUse()") Done
+
+        div.overlay(ng-if='question == "iceCream"')
+            p Tap on days to mark the number of scoops of ice cream that you ate.
+              a.right(ng-click="finish()") Finish Timeline
+              a.left(ng-click="a.fixDayUseMistakes()"  ng-show="tapped") Fix Mistakes
+
+        div.overlay(ng-if='question == "selectLastWeek"')
+            p Tap the last week you used {{ substance }} on.
+
+        div.overlay(ng-if='question == "markUseOnWeek"')
+            p Tap days during that week to mark {{ substance }} use. Each tap corresponds to <select ng-model="$parent.hitMultiplier" ng-options="m for m in multipliers"></select> {{hit}}(s).&nbsp;
+                a.right(ng-click="a.markRepeats()" ng-show="tapped") Done
+                a.left(ng-click="a.backToSelectWeek()") Go Back
+
+        div.overlay(ng-if='question == "markRepeats"')
+            p Now tap any other weeks or months where you repeated that pattern of {{substance}} use.
+            a.right(ng-click="a.repeatPromptUseWeeks()") Done
+
+        div.overlay(ng-if='question == "selectLastWeekAgain"')
+            p Now tap the next unfilled week that you used {{ substance }} on. Othewise, tap:&nbsp;
+                a(ng-click="a.startSubstance()") Done
+
+        div.overlay(ng-if='question == "usedOther"')
+            p Have you used any other substances during this time period?
+            p
+                a(ng-click="a.promptOther()") Yes, I've used substances
+                a(ng-click="a.promptCheck()") No, I haven't used other substances
+
+        div.overlay(ng-if='question == "checkCalendar"')
+            p Now review the calendar to check if it is an accurate description of your substance use.
+            p
+                a(ng-click='a.promptEdit()') Fix mistakes
+                a(ng-click='a.confirmClear()') Clear &amp; start over
+                a.right(ng-click='finish()') Great! Finish.
+
+        div.overlay(ng-if='question == "confirmClear"')
+            p Are you sure that you want to clear everything &amp; start over?
+            p
+                a(ng-click="a.promptEdit()") No, just fix mistakes
+                a.right(ng-click='a.restart()') Yes, start over
+
+        div.overlay(ng-if='question == "promptEdit"')
+            p
+                a(ng-click="a.promptRemove()") Remove substance use
+                p(ng-repeat="substance in substances"): a(ng-click="a.promptAdd(substance)") Add {{substance}} use
+                a(ng-click="a.promptOther()") Add Other Substance Use
+
+                a.right(ng-click="a.promptCheck()") Done
+
+        div.overlay(ng-if='question == "promptRemove"')
+            p Tap days to remove all substance use from them.
+            p
+                a.right(ng-click="a.promptEdit()") Done
+
+        div.overlay(ng-if='question == "promptAdd"')
+            p Tap days to add {{substance}} use.
+            p
+                a.right(ng-click="a.promptEdit()") Done
+
+        div.overlay(ng-if="question == 'selectOtherSubstance'")
+            p Enter the name of one of the other substances that you have used:
+            p
+                input(type="text"
+                ng-model="$parent.otherDrug"
+                enter="a.enterOther($parent.otherDrug)")
+                a.right(ng-click="a.enterOther($parent.otherDrug)") Done
+                span.error(ng-show="error") Invalid Name
+            p Or select from one of the substances below:
+            p(ng-repeat="sub in otherSubstances | filter:otherDrug:startsWith")
+                a.drug(ng-click="a.enterOther(sub)") {{sub}}
+
+
+    table.calendar(ng-show="showCalendar" ng-class="{weekMode:weekMode}")
+        tbody(ng-repeat='month in months')
+            tr.monthHead(
+            ng-class="{selectable:monthSelectionEnabled}"
+            ng-click="a.monthClicked(month.key)")
+                td(colspan = 7): div.title {{ month.title }}
+            tr.week(ng-repeat='week in month.weeks'
+            ng-class="{selectable:weekSelectionEnabled}"
+            ng-click="a.weekClicked(week.key)")
+                td(ng-repeat='day in week.days'
+                class="day"
+                ng-class="{null:day.isNull,weekend:day.isWeekend,selectable:selectionEnabled, selected:day.weekMarked(), outOfMonth:day.outOfMonth}"
+                ng-click='a.dayClicked(day.key)')
+                    div.line {{day.title}} <span class="event">{{day.data.event}}</span>
+                    div.line.labs
+                        span.alc(ng-show="day.data.alcohol") A
+                        span.pot(ng-show="day.data.pot") M
+                        span.tob(ng-show="day.data.tobacco") T
+                        span.oth(ng-show="hasOther(day.data)") O
+                    div.line.vals
+                        span.oth(ng-if="day.data.iceCream") {{day.data.iceCream}} Scoop(s)
+                        span.alc(ng-show="day.data.alcohol") {{day.data.alcohol}}
+                        span.pot(ng-show="day.data.pot") {{day.data.pot}}
+                        span.tob(ng-show="day.data.tobacco") {{day.data.tobacco}}
+                        span.oth(ng-show="hasOther(day.data)") {{countOther(day.data)}}
+    div#end

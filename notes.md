@@ -1,0 +1,3 @@
+ - inline bower
+ - add bin/sh command
+ - add install command

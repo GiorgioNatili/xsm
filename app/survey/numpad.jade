@@ -1,0 +1,20 @@
+.numpad(ng-controller="numpadCtrl")
+  .pad
+    .line
+      a(ng-click="press(1)"): .num 1
+      a(ng-click="press(2)"): .num 2
+      a(ng-click="press(3)"): .num 3
+    .line
+      a(ng-click="press(4)"): .num 4
+      a(ng-click="press(5)"): .num 5
+      a(ng-click="press(6)"): .num 6
+    .line
+      a(ng-click="press(7)"): .num 7
+      a(ng-click="press(8)"): .num 8
+      a(ng-click="press(9)"): .num 9
+    .line
+      a(ng-click="press(0)"): .num 0
+      a.blank
+      a.del(ng-click="delete()")
+        .delIcon &#9003;
+  input(type="number" ng-model="question.value")

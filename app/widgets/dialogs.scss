@@ -1,0 +1,17 @@
+.dialog {
+  width: 200px;
+  margin: 20px auto;
+  height: auto;
+
+  p, h1 {
+    padding-bottom: 18px;
+  }
+  h1 {
+    font-size:12px;
+  }
+  .cancel{
+    position:relative;
+    top: -6px;
+    padding-left:36px;
+  }
+}

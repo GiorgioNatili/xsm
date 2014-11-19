@@ -1,0 +1,65 @@
+<header>
+  <div class="inner">
+    <div class="logo">
+    </div>
+  </div>
+</header>
+<div id="container">
+  <div id="info-graphics">
+  <h3>Tap on the five colored regions to see how alcohol and drugs affect your brain:</h3>
+  <br />
+  <div class="caption" onclick = "toggleBrain('all');" id="caption-prefrontal">Prefrontal Cortex: Interferes with making wise decisions.</div>
+  <div class="caption" onclick = "toggleBrain('all');" id="caption-motor">Motor Cortex: Can cause a stroke leading to paralysis.</div>
+  <div class="caption" onclick = "toggleBrain('all');" id="caption-reward">Reward Pathway: Gets hijacked, so you only feel good when you are on drugs, and you keep craving more.</div>
+  <div class="caption" onclick = "toggleBrain('all');" id="caption-hippo">Hippocampus: Hurts your ability to learn and remember.</div>
+  <div class="caption" onclick = "toggleBrain('all');" id="caption-cereb">Cerebellum: Impairs balance and coordination, affects emotions.</div>
+    <img src="/survey-schema/pages/images/brain-all.png" alt="brain" name="brain" width="359" height="279" border="0" usemap="#brainMap" id="brain" />
+	   	<map name="brainMap" id="brainMap">
+	      <area class="prefrontal" shape="poly" coords="84,40,109,75,98,184,38,166,23,114,27,91,53,60" alt="prefrontal" onclick="return toggleBrain('prefrontal');" />
+	      <area class="motor" shape="poly" coords="161,21,233,17,221,80,144,68" onclick="return toggleBrain('motor')"; alt="motor" />
+	      <area class="reward" shape="poly" coords="179,128,195,124,204,136,201,155,176,149,157,154,138,169,123,144,142,137" onclick="return toggleBrain('reward');" alt="reward pathway"  />
+	      <area class="hippo" shape="poly" coords="176,192,247,164,260,127,224,160,180,172" onclick="return toggleBrain('hippo');" alt="hippocampus" />
+	      <area class="cereb" shape="poly" coords="201,202,321,165,329,208,295,241,238,244,203,238,195,217" onclick="return toggleBrain('cereb');" alt="cerebellum" />
+	    </map>
+  </div><!--end info-graphics-->
+  <div id="info-box">
+    <h2>Your brain is going through important development all the way into your mid-20&#8217;s!</h2>
+    <p>To help reach your goals, and be the best YOU that you can be, you need a healthy brain.</p>
+  	<p>Because your brain is still developing, it is extremely sensitive to substance use, and can get more easily addicted than adult brains.</p>
+  	<p>Here are some important parts of your brain, and explanations of what they do:</p>
+    <ul>
+      <li><a class="prefrontal" onclick="toggleBrain('prefrontal'); showHide('captionPre');">
+        <img src="/survey-schema/pages/images/tap-grey.png" alt="tap" width="15" height="23" />
+        Prefrontal Cortex</a>: Important for decision making, planning ahead and self-control
+      </li>
+      <li><a class="hippo" onclick="toggleBrain('hippo');">
+        <img src="/survey-schema/pages/images/tap-grey.png" alt="tap" width="15" height="23" />
+        Hippocampus</a>: Responsible for memory
+      </li>
+      <li><a class="reward" onclick="toggleBrain('reward');">
+        <img src="/survey-schema/pages/images/tap-grey.png" alt="tap" width="15" height="23" />
+        Reward Pathway</a>: Involved in feelings of reward, pleasure, and motivation
+      </li>
+      <li><a class="cereb" onclick="toggleBrain('cereb');">
+        <img src="/survey-schema/pages/images/tap-grey.png" alt="tap" width="15" height="23" />
+        Cerebellum</a>: Affects balance and coordination
+      </li>
+        <li><a class="motor" onclick="toggleBrain('motor');">
+        <img src="/survey-schema/pages/images/tap-grey.png" alt="tap" width="15" height="23" />
+        Motor Cortex</a>: Controls movement
+      </li>
+    </ul>
+    <p><a onclick="return elementsToggle('references');">
+      <img src="/survey-schema/pages/images/tap-grey.png" alt="tap" width="15" height="23" />
+			TAP FOR REFERENCES</a>
+		</p>
+    <div id="footnotesPopup" class="references" onclick="return elementsToggle('references');" style="margin-left: 50px; margin-top: -310px">
+      <br>
+      <p>REFERENCES: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(tap to clear)</p>
+      <p> <sup>1</sup>Lenroot RK, Giedd JN. Brain development in children and adolescents: insights from anatomical magnetic resonance imaging. Neurosci Biobehav Rev. 2006;30(6):718-729.</p>
+      <p> <sup>2</sup>Bava S, Frank LR, McQueeny T, Schweinsburg BC, Schweinsburg AD, Tapert SF. Altered white matter microstructure in adolescent substance users. Psychiatry Res Neuroimaging. 2009;173(3):228-237.</p>
+      <p> <sup>3</sup>Lisdahl KM, Thayer R, Squeglia LM, McQueeny TM, Tapert SF. Recent binge drinking predicts smaller cerebellar volumes in adolescents. Psychiatry Res. 2013;211(1):17-23.</p>
+      <p> <sup>4</sup>Squeglia LM, Jacobus J, Tapert SF. The influence of substance use on adolescent brain development. Clin EEG Neurosci J. 2009;40(1):31-38.</p>
+    </div>
+  </div>
+</div><!--end container-->

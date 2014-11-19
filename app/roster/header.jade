@@ -1,0 +1,10 @@
+div.inner
+    div.title
+        h1 CeASAR Study Manager
+        h2 Roster
+        input(type="text" ng-model="searchText" placeholder="Search")
+        a(bs-popover data-placement="bottom" content-template="/roster/grouper.html") Counts By Status
+
+    ul.utils
+        li: a(ng-click='addParticipant()') Add Participant
+        li Logged in as {{user()}} <a class="dangerous" ng-click="logout()">Log Out</a>

@@ -1,0 +1,30 @@
+div.inner(ng-if="currentParticipant()")
+    div.surveys
+        a.clear(ng-click="clearSurvey()") Clear&nbsp;Suvey
+        label Surveys
+        p(ng-repeat="survey in schema().surveys"
+          ng-class="{'disabled':!isEnabled(survey)}")
+            a(ng-click="runSurvey(survey)") {{ survey.title }}
+    br
+    h4.details: a(ng-click="toggleDetails()") Details (Show {{detailsMoreOrLess()}})
+
+    div(ng-repeat="detail in detailsFeilds()")
+        label {{detail.title}}
+        input(type="text"
+            ng-click="editField(detail.title, detail.key)"
+            readonly
+            ng-model="currentParticipant()[detail.key]")
+    div#logbook
+        h4 Log Book
+        div(ng-repeat="log in logbook()")
+            p
+            | <span style="color:grey">
+            | {{log.t | date:'short' }}
+            | </span>
+            | {{log.q}}
+            | <span style="float:right">
+            | {{log.ra}}
+            | [{{log.m}}]
+            | </span>
+            p {{log.a}}
+        button.btn( type='button' ng-click="addContact()") Add Entry

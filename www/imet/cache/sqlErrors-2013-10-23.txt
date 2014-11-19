@@ -1,0 +1,17 @@
+2013-10-23 17:24
+insert into session_tool5_answers (`id_patient_fk`,`id_pre_tlfb_stimulant_fk`,`id_calculator_type_fk`,`value`,`input`,`id_value1_fk`,`id_value2_fk`,`text`)values(101,12,12,'0',0,0,146,'Hallucinogens & my: money (0 dollars)\n')
+Cannot add or update a child row: a foreign key constraint fails (`ezdb`.`session_tool5_answers`, CONSTRAINT `session_tool5_answers_ibfk_3` FOREIGN KEY (`id_value1_fk`) REFERENCES `calculator_option_values` (`id_calculator_option_value_pk`) ON DELETE CASCADE)
+-------------------------------------------------------------------------
+2013-10-23 17:25
+insert into session_tool5_answers (`id_patient_fk`,`id_pre_tlfb_stimulant_fk`,`id_calculator_type_fk`,`value`,`input`,`id_value1_fk`,`id_value2_fk`,`text`)values(101,12,12,'0',0,0,146,'Hallucinogens & my: money (0 dollars)\n')
+Cannot add or update a child row: a foreign key constraint fails (`ezdb`.`session_tool5_answers`, CONSTRAINT `session_tool5_answers_ibfk_3` FOREIGN KEY (`id_value1_fk`) REFERENCES `calculator_option_values` (`id_calculator_option_value_pk`) ON DELETE CASCADE)
+-------------------------------------------------------------------------
+2013-10-23 17:25
+insert into session_tool5_answers (`id_patient_fk`,`id_pre_tlfb_stimulant_fk`,`id_calculator_type_fk`,`value`,`input`,`id_value1_fk`,`id_value2_fk`,`text`)values(101,12,12,'0',0,0,146,'Hallucinogens & my: money (0 dollars)\n')
+Cannot add or update a child row: a foreign key constraint fails (`ezdb`.`session_tool5_answers`, CONSTRAINT `session_tool5_answers_ibfk_3` FOREIGN KEY (`id_value1_fk`) REFERENCES `calculator_option_values` (`id_calculator_option_value_pk`) ON DELETE CASCADE)
+-------------------------------------------------------------------------
+2013-10-23 17:25
+insert into session_tool5_answers (`id_patient_fk`,`id_pre_tlfb_stimulant_fk`,`id_calculator_type_fk`,`value`,`input`,`id_value1_fk`,`id_value2_fk`,`text`)values(101,12,12,'0',0,0,146,'Hallucinogens & my: money (0 dollars)\n')
+Cannot add or update a child row: a foreign key constraint fails (`ezdb`.`session_tool5_answers`, CONSTRAINT `session_tool5_answers_ibfk_3` FOREIGN KEY (`id_value1_fk`) REFERENCES `calculator_option_values` (`id_calculator_option_value_pk`) ON DELETE CASCADE)
+-------------------------------------------------------------------------
+

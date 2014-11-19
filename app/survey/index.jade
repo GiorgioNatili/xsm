@@ -1,0 +1,29 @@
+extends /page/page
+
+block title
+    title Loading - CSM
+
+block headers
+    script(src='/survey-schema/surveys/surveyFunctions.js' type='text/javascript')
+    script(src='/survey-schema/surveys/branching.js' type='text/javascript')
+    script(src='/roster/login.js' type='text/javascript')
+    script(src='/db/client.js' type='text/javascript')
+    script(src='/app/router.js' type='text/javascript')
+    script(src='./participantModel.js' type='text/javascript')
+    script(src='./model.js' type='text/javascript')
+    script(src='./client.js' type='text/javascript')
+    script(src='./survey.js' type='text/javascript')
+    link(href='./survey.css', rel='stylesheet')
+    link(href='./numpad.css', rel='stylesheet')
+
+    link(href='/survey-schema/pages/info_pages/info.css', rel='stylesheet')
+    script(src='/survey-schema/pages/info_pages/scripts.js' type='text/javascript')
+    link(href='/widgets/dialogs.css', rel='stylesheet')
+    script(src='/survey-schema/doctorReport.js' type='text/javascript')
+    link(href='/survey-schema/doctorReport.css', rel='stylesheet')
+
+block contents
+  .overlay(ng-controller="doctorReportWrapCtrl")
+      .overlay(ng-controller="surveyCtrl" ng-if="!doctorReportShowing")
+          include /survey/survey
+      include /survey-schema/doctorReportWrap

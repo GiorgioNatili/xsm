@@ -1,0 +1,106 @@
+body,div,p,form {margin:0; padding:0; font-family: verdana; font-size:100%;}
+div {}
+ul {list-style:none;}
+.hide {display:none;}
+img {border:0px;}
+.iframeStep {
+	width:1000px;
+	height:700px
+}
+#container {border:0px solid red; background:url(../images/bg.jpg) no-repeat; height:100%;}
+#header, #questions, #msg, #debugger {width:100%; position:absolute;}
+#header {height:3.3em; border:0px solid red; background:url(../images/logo-chb.gif) bottom right no-repeat;}
+#msg {top:10.5em; left:9em; background-color:#ffcccc; padding:1em; width:50%;}
+#msg span {background:url(../images/exclamation.gif) left center no-repeat; padding-left:1.4em;}
+msg .help {margin-left:.6em;}
+
+#start-crafft {padding-top:5em; padding-left:2em;}
+    #start-crafft a {text-decoration:none; color:#333; font-size:1.4em;}
+#intro {top:4.4em;}
+#results {top:4.4em;}
+#questions {top:4.4em;}
+    #questions div {font-size:1.4em; color:#4a4a4a; padding-left:1em;}
+        #questions div p {padding:.6em;}
+        #questions table tr td {font-size:1.4em; color:#333;}
+
+        ul li input.c {height:2em; width:2em;}
+        ul {margin-bottom:0;}
+        ul li {margin-bottom:.8em;}
+        ul li input.r {height:2.4em; width:2.4em;}
+        ul li input {position:absolute; margin-top:-.2em;}
+        ul li label {padding-left:2em;}
+    
+    #questions .notes {font-size:.7em; margin-left:1em;}
+            #questions .notes ul {list-style:disc;}
+            #questions .notes ul li {padding-left:.2em;}
+
+.actions {}
+    .actions a {background:url(../images/btn-next.gif); width:143px; height:61px; display:block; margin-left:0em; border:0px solid red; margin-top:0;}
+    .actions a:hover {background:url(../images/btn-next-hover.gif);}
+
+.actions-grey {}
+    .actions-grey a {background:url(../images/btn-grey-next.gif); width:143px; height:61px; display:block; margin-left:0em; border:0px solid red; margin-top:0;}
+    .actions-grey a:hover {background:url(../images/btn-grey-next-hover.gif);}
+
+    
+    
+#speak {}
+#speak p {color:red;}
+
+#printer-select {}
+#printer-select ul {margin:0; padding:0;}
+#printer-select ul li {margin-bottom:.2em;}
+#printer-select input {width:2em; height:2em;}
+#printer-select label {padding-left:2.4em !important; font-size:.7em;}
+
+#t1 td h3 {margin:0; margin-left:1.4em; font-weight:normal; font-size:1em; margin-bottom:.2em; border-bottom:.1em solid #ccc; padding-bottom:.1em;}
+#t1 p input {font-size:.6em;}
+#t1 p label {font-size:.7em; width:9em; background-color:#ececec; padding:.1em .3em; text-align:right;}
+#t1 ul {}
+#t1 ul li {font-size:.7em;}
+#t1 ul li label {padding-left:3em;}
+
+.enteraccess {font-size:.65em; text-indent:.6em;}
+#accesscode {font-size:inherit; padding:.1em;}
+
+.instruction {}
+
+#debugger {background-color:#ffe1e1; opacity:.6; border-left:.4em dashed red; width:15%; z-index:1; right:2em; top:8em; font-size:.6em; display:block; text-transform:uppercase; padding:1em; }
+#debugger table tr td {font-size:.6em;}
+#debugger a.close {float:right; font-weight:bold; text-decoration:none; background-color:red; padding:.2em .6em .3em .6em; color:#fff; font-size:1.1em;}
+#debugger span {}
+
+
+span.checkbox {
+        width: 50px;
+                height: 60px;
+        padding: 0 15px 0 0;
+        background: url(../images/checkbox.gif) no-repeat;
+        display: block;
+        clear: left;
+        float: left;
+}
+
+span.radio {
+        width: 50px;
+        height: 60px;
+        padding: 0 15px 0 0;
+        background: url(../images/radio-1.gif) no-repeat;
+        display: block;
+        clear: left;
+        float: left;
+}
+
+span.select {
+                position: absolute;
+        width: 158px; /* With the padding included, the width is 190 pixels: the actual width of the image. */
+        height: 60px;
+        padding: 0 24px 0 8px;
+        color: #fff;
+        font: 12px/21px arial,sans-serif;
+        background: url(../images/select.gif) no-repeat;
+        overflow: hidden;
+}
+
+.radio {cursor:pointer;}
+

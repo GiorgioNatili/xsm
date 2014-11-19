@@ -1,0 +1,32 @@
+Hi Amit,
+ 
+I sent you a DropBox link to a zip file containing what we call the cSBA pages. Currently there is no branching, and the pages are linked to sequence through every page with no skipping.  In the actual version, they will get a minimum of 4 question pages and a maximum of 43, depending on their answers. Everyone gets all the other pages. Here's the sequence:
+ 
+welcome-NN-page.htm (NN = 4 total)
+NN-question-page.htm (NN = 43 total)
+score-page-N.htm (N = 2 total)
+info-NN-<TOPIC_DESCRIPTION>.htm (NN = 11 total)
+ 
+There are some aspects of the page formatting I don’t like. For example, the fixed size, non-responsive design, and unnecessary and unfashionable rounded corners on the bottom. So I’ll probably want to change this a bit. But the general layout and scope of content will be the same.
+ 
+As always, let me know if you have any questions or suggestions.
+ 
+(And see you soon!)
+
+
+surveys:
+	demographic survey: ra
+	main
+		welcome
+		question
+		*randomization*
+		(info)
+		thank you!
+		thank! <password>
+			(score)
+	follow-on (minimal branding)
+		tfb
+
+https://www.myvyou.com/asus/asus.htm
+u:10000
+p:crafft

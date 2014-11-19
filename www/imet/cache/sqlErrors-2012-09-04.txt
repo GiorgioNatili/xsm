@@ -1,0 +1,5 @@
+2012-09-04 14:21
+insert into session_tool7_introcard_answers (`id_patient_fk`,`session`)values(2,2)
+Cannot add or update a child row: a foreign key constraint fails (`ezdb`.`session_tool7_introcard_answers`, CONSTRAINT `session_tool7_introcard_answers_ibfk_2` FOREIGN KEY (`id_session_tool7_introcard_fk`) REFERENCES `session_tool7_introcard` (`id_session_to)
+-------------------------------------------------------------------------
+

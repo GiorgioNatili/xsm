@@ -1,0 +1,20 @@
+table.thead: thead
+    td( ng-repeat="header in headers()"
+    ng-click="orderBy(header.key)")
+        div(ng-class="(order == header.key) ? 'sortedBy' : 'notSortedBy'")
+            | {{header.title}}
+            | <i ng-class="(reverse == true) ? 'fa-sort-alpha-desc' : 'fa-sort-alpha-asc'" class="fa"></i>
+table.tbody(ng-show='!loading()')
+    tbody
+        tr( ng-repeat="participant in filteredParticipants() | limitTo:150"
+        ng-class="{ 'selected': participant.id == getParticipantId() }"
+        ng-click='queryDetails(participant.id)'
+        )
+            td(ng-repeat="header in headers()")
+                div {{participant[header.key]}}
+
+        tr(ng-if='showOverflow')
+            td(colspan=7)
+                div(style="width:400px") Warning: additional rows not shown! Sorry, ask Lon.
+div(ng-show='loading()')
+    include /widgets/loading

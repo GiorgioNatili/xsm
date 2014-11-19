@@ -1,0 +1,44 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+        <script src="includes/jquery-1.7.1.min.js"></script>
+        <script src="includes/effects.core.js"></script>
+        <script src="includes/config.js"></script>
+        <script src="includes/common.js"></script>
+        <link href="includes/style.css" rel="stylesheet" type="text/css" />
+        <!--[if IE]>
+        <link href="includes/style-ie.css" rel="stylesheet" type="text/css" />
+        <![endif]-->
+	<title>Redirect to crafft</title>
+</head>
+
+<script type="text/javascript">
+	function GetURLParameter(sParam)  {  
+     	   var sPageURL = window.location.search.substring(1);  
+ 		   var sURLVariables = sPageURL.split('&');  
+			
+  		   for (var i = 0; i < sURLVariables.length; i++)   
+  		   {  
+    		     var sParameterName = sURLVariables[i].split('=');  
+      		   	 
+				 if (sParameterName[0] == sParam)   
+      		     {  
+        		     return sParameterName[1];  
+       		     }  
+    		 }  
+ 		 } 
+		
+	var username = GetURLParameter('username');  
+		
+	function max() {
+		//var url = "crafft.asp?studyid=" + studyid;
+		//openFullScreen(url, "crafft");
+		window.open('crafft3.html?username='+username, 'google', 'fullscreen=yes,location=no,toolbar=0,directories=no,status=no,menubar=no,resizable=no,scrollbars=no');
+	}
+
+</script>						
+<body onload="max()">
+</body>
+
+</html>

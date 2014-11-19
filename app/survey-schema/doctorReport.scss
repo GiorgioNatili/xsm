@@ -1,0 +1,107 @@
+@import "../style/library";
+
+#report{
+	width:700px;
+	margin: 0 auto;
+	dt, dd{
+		display: inline-block;
+	}
+	dt{
+		font-size: 100%;
+		color: #888;
+	}
+	dd{
+		padding-left:8px;
+		padding-right:12px;
+		font-size: 120%;
+	}
+	.bold {
+		font-weight: bold;
+	}
+	.do, .blue{
+		color: rgb(22, 22, 165);
+	}
+	p.do {
+		font-weight: bold;
+		margin-top: 12px;
+		margin-bottom: 6px;
+	}
+	.risk{
+		position: relative;
+	}
+	.risk img {
+		position: absolute;
+		height: 120px;
+		width: 100px;
+		top: -20px;
+	}
+	.section{
+		padding-top: 6px;
+	}
+	.badge{
+		display: block;
+		clear: left;
+		float: left;
+		width: 120px;
+		margin-right: 12px;
+		margin-left: 12px;
+	}
+	.useLine{
+		margin-bottom: 6px;
+	}
+	.good {
+		background-color: #8c4;
+	}
+	.bad{
+		background-color:#900;
+	}
+	li{
+		list-style-position: inside;
+    	text-indent: -1em;
+		margin-left: 12px;
+		font-style: italic;
+	}
+	.i{
+		font-style: italic;	
+	}
+	.low{
+		background-color: #8c4;
+	}
+	.medium{
+		background-color: #fc0;
+	}
+	.high{
+		background-color: #d20;
+	}
+	.note{
+		color: #888;
+	}
+}
+.doctor-btn {
+	position: fixed;
+	left: -38px;
+	bottom: 100px;
+	padding: 12px;
+	transform:rotate(90deg);
+	background-color: #eecc11;
+	color: white;
+	visibility: hidden;
+	&:hover {
+		text-decoration: none;
+	}
+}
+.doctor-report {
+	position: fixed;
+	top: 0; bottom: 0; left:0; right: 0;
+	background-color:white;
+	z-index: 1000;
+}
+.showBtn {
+	visibility: visible;
+}
+.hideBtn {
+	visibility: hidden;
+}
+.inactiveBtn {
+	background-color: #ddd;
+}

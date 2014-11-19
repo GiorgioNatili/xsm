@@ -1,0 +1,9 @@
+table
+    thead
+        tr
+            td
+            td(ng-repeat="site in sites()"): b {{site}}
+    tbody
+        tr(ng-repeat="(status, countsBySite) in countsByStatusBySite()")
+            td: b {{ status }}
+            td(ng-repeat="site in sites()") {{countsBySite[site]}}

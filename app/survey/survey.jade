@@ -1,0 +1,63 @@
+.survey(ng-switch on="page.type" class="{{ survey.class }}")
+    div(ng-switch-when="page" class="page-wrap")
+        div(ng-bind-html="bodyHTML")
+        .btns
+            button.btn(ng-if="hasBack()" ng-click="prevQuestions()" class="back") &lt; Back
+            button.next.btn(class="nextInner"
+                   ng-click="nextQuestions()") &nbsp;&nbsp;Next &gt; &nbsp;&nbsp;
+    div(ng-switch-when="function" class="page-wrap"): div.page Loading
+    div(ng-switch-when="questions")
+        header: div.inner
+            div.logo
+        div.page-wrap: div.page
+            audio(ng-if="page.audio" ng-src="page.audio" controls autoplay="true")
+            h1 {{survey.title}}
+            div.question(ng-repeat="question in page.questions" class="question-{{question.name}}")
+                h2(ng-if="question.headerHTML" ng-bind-html="question.headerHTML")
+                p.prompt <div ng-bind-html="question.textHTML"></div> <span class="error">{{question.error}}</span>
+                    div(ng-switch on="question.type")
+                        div(ng-switch-when="text")
+                            input(type="text" ng-model="question.value")
+                        div.options(ng-switch-when="radio"
+                            class="{{question.cssClass}}")
+                            div.wrap(ng-repeat="option in question.options")
+                                p.option(
+                                    ng-click="selectRadio(question, option)"
+                                    ng-class="{selected:radioSelected(question, option)}")
+                                    input(
+                                    value="{{option}}"
+                                    type="radio")
+                                    label(for="radio-{{option}}" ng-bind-html="trust(option)")
+                        div.options(ng-switch-when="check"
+                            class="{{question.cssClass}}")
+                            div.wrap(ng-repeat="option in question.options")
+                                p.option(ng-class="{selected:checkSelected(question, option)}"
+                                    ng-click="selectCheck(question, option)")
+                                    input(
+                                    ng-model="question.value[$index]"
+                                    value="{{option}}"
+                                    type="checkbox"
+                                    name="{{option}}"
+                                    id="check-{{option}}")
+                                    label(for="check-{{option}}" ng-bind-html="trust(option)")
+                        div(ng-switch-when="date")
+                            input(type="text" placeholder='mm/dd/yyyy' ng-model="question.value")
+                        div(ng-switch-when="numeric")
+                            input(type="number" ng-model="question.value")
+                        div(ng-switch-when="numpad" style="overflow:hidden;")
+                            include numpad
+                    div(ng-if="question.showOther")
+                        p Please enter other:
+                        p: input(type="text"
+                                ng-model="question.otherValue")
+            div(ng-show="nextVisible && survey.type == 'complexQuestions'")
+                button.btn(ng-if="hasBack()" ng-click="prevQuestions()" class="back") &lt; Back
+                button.next.btn(class="nextInner"
+                       ng-show="!survey.quickMode"
+                       ng-click="nextQuestions()") &nbsp;&nbsp;Next &gt; &nbsp;&nbsp;
+            div(ng-show="!nextVisible") Loading
+            p.error(ng-show="hasErrors") Note errors &amp; warnings above.
+        div.footbr
+        footer
+            div.logo1
+            div.logo2

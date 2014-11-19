@@ -1,0 +1,11 @@
+.roster(ng-controller="rosterCtrl")
+    .update(ng-if="needsUpdate()") Please update csm by running the update CSM script the next time you have a network connection.
+    .newData(ng-if="newData()") You have unsynced data. Please run the sync script the next time that you have a network connection.
+    .dataBehind(ng-if="dataBehind()") You have not synced recently. Please run the sync script the next time that you have a network connection.
+    header
+        include header.jade
+    .page
+        .master
+            include table.jade
+        .detail
+            include detail.jade

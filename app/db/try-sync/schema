@@ -1,0 +1,10 @@
+id            int(8) NOT NULL AUTO_INCREMENT,
+machine       int(4),
+_timestamp    varchar(50),
+ra		      int(4),
+createSeq     int(4),
+participantID int(4),
+_key          varchar(255),
+value         varchar(32000),
+unique        (machine,_timestamp,createSeq),
+primary key   (id)

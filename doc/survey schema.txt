@@ -1,0 +1,56 @@
+survey
+
+
+survey
+
+	name (id, variable prefix)
+	class (css class)
+	type (tfb|complexQuestions|simpleQuestions)
+	title (display)
+	next (flow control, a survey name or undefined)
+
+	pages[] (not for tfb)
+		name (id)
+		type (function|page|questions)
+		audio
+		branching
+			type = simple
+				target
+				value
+			type = complex
+				fn(participant)->page.name|Done!
+
+		questions[] (if type = questions)
+			header
+			name (id)
+			type (text,radio,check,radioOther,checkOther,numeric,date)
+			options
+			cssClass
+			required
+			text
+		body (if type = info)
+		fn (if type = function)
+
+----
+            
+
+          if (setupOther(question,
+            combineCheckedOptions(question.options, question.value))) {
+            question.otherValue = getAnswer(question.name + '-other');
+            setupOtherField(questionIndex);
+          }
+
+
+
+    
+
+
+    function setupOther(question, value) {
+      if (question.type == 'check' || question.type == 'radio') {
+        if (question.options.indexOf('Other') !== -1) {
+          question.showOther = value.indexOf('Other') !== -1;
+          return question.showOther;
+        }
+      }
+      return false;
+    }

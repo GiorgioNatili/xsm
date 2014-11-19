@@ -1,0 +1,14 @@
+a.doctor-btn(ng-if="!doctorReportShowing" ng-click="showDoctorReport()" ng-class="getDoctorReportBtnClass()") Doctor Login
+
+div#report(ng-if="doctorReportShowing" ng-controller="doctorReportCtrl")
+    div(ng-if="doctorLoggedIn")
+        div(ng-if="m()")
+            include /survey-schema/doctorReport
+    .dialog(ng-if="!doctorLoggedIn")
+        h1 Doctor Login
+        label Password
+        input(type='password' ng-model='password' autofocus='true' ng-keypress="maybeEnter($event, password)")
+        button.btn(type='button'
+          ng-click='tryCredentials(password)') Login
+        a.cancel(ng-click='hideDoctorReport()') Cancel
+        p.error(ng-if='badPassword') Invalid password.

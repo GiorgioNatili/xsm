@@ -1,0 +1,11 @@
+div.modal.contactWindow(tabindex="-1" role="dialog")
+    div.modal-dialog
+        div.modal-content
+            div(ng-if="!clearing")
+                div(ng-controller="clearCtrl")
+                    label Select a Survey to Clear:
+                    p(ng-repeat="survey in schema.surveys")
+                        a(ng-click="clear(survey)") {{survey.title}}
+                    button.btn(ng-click="$hide()") Cancel
+            div(ng-if="clearing")
+                include /widgets/loading

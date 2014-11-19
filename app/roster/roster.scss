@@ -1,0 +1,175 @@
+@import "../style/library";
+
+$masterWidth: 850px;
+
+.popover {
+  max-width: 800px;
+}
+
+.roster {
+  .page {
+    @include clearfix();
+    flex-grow: 1;
+    display: flex;
+    flex-direction: row;
+    @include page($pageWidth);
+    position: relative;
+    color: black;
+  }
+  .update, .dataBehind, .newData{
+    background-color: orange;
+    border-bottom: 1px solid darken(orange, 20%);
+    color: white;
+    text-align: center;
+    padding-top: 2px;
+    flex-shrink: 0;
+  }
+  .update{
+    background-color: $red;
+    border-bottom: 1px solid darken($red, 20%);
+  }
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  padding-bottom: 16px;
+  .master {
+    float: left;
+    width: $masterWidth;
+    display: flex;
+    flex-direction: column;
+
+    table {
+      display: flex;
+      flex-direction: column;
+      width: $masterWidth;
+      table-layout: fixed;
+      overflow-x: hidden;
+    }
+
+    table.tbody {
+      flex-grow: 1;
+      height: 100%;
+      overflow-y: scroll;
+    }
+  }
+  header td {
+    padding: 6px 12px;
+  }
+  .detail {
+    float: right;
+    background-color: #d5e3f4;
+    width: $pageWidth - $masterWidth;
+    overflow-y: scroll;
+    padding: 16px;
+    .disabled a{
+      color: rgb(164, 166, 179);
+    }
+    & > .inner {
+      display: flex;
+      flex-direction: column;
+      & > * {
+        flex-shrink: 0;
+      }
+    }
+    .detail-entry {
+      display: inline-block;
+    }
+
+    .popup {
+      float: left;
+      ul {
+        position: absolute;
+        z-index: 1000;
+        // background-color:black;
+      }
+    }
+    .surveys p {
+      padding: 6px 0px;
+      a {
+        padding: 6px 0px;
+      }
+    }
+  }
+  td > div {
+    width: $masterWidth / 7;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    cursor: pointer;
+  }
+  td:first-child {
+    padding-left: 16px;
+  }
+  tr.selected {
+    background: $background2;
+    td div {
+      cursor: default;
+    }
+  }
+  tr {
+    border-bottom: 1px solid rgba($foreground, .05);
+  }
+  tr:last-child {
+    border-bottom: none;
+  }
+  thead td {
+    font-weight: 600;
+    border-bottom: 1px solid grey;
+    .sortedBy i {
+      opacity: 1;
+    }
+    i {
+      opacity: 0;
+
+      -webkit-transition: opacity 200ms ease-in;
+      -moz-transition: opacity 200ms ease-in;
+      -ms-transition: opacity 200ms ease-in;
+      -o-transition: opacity 200ms ease-in;
+      transition: opacity 200ms ease-in;
+
+    }
+    .notSortedBy:hover {
+      i {
+        opacity: 0.4;
+      }
+    }
+  }
+  .unset {
+    padding-left: 16px;
+    border-left: none;
+  }
+  textarea {
+    line-height: 24px;
+  }
+  textarea[rows="4"] {
+    height: 50px;
+  }
+  textarea[rows="8"] {
+    height: 200px;
+  }
+  input {
+    width: 100%;
+  }
+  h4 {
+    color: $blue;
+    font-weight: bold;
+  }
+  .btn {
+    margin-top: 12px;
+  }
+  .clear {
+    float: right;
+    color: $red;
+    font-size: 80%;
+  }
+  h4.details a{
+    font-weight:normal;
+  }
+}
+
+.modal.fade .modal-dialog {
+  -webkit-transition: -webkit-transform .1s ease-out;
+}

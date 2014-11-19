@@ -1,0 +1,66 @@
+@-webkit-keyframes dancing-dots-jump {
+  /* line 2, ../../../app/widgets/loading.scss */
+  0% {
+    top: 0;
+  }
+
+  /* line 5, ../../../app/widgets/loading.scss */
+  5% {
+    top: -10px;
+  }
+
+  /* line 8, ../../../app/widgets/loading.scss */
+  25% {
+    top: 3px;
+  }
+
+  /* line 11, ../../../app/widgets/loading.scss */
+  35% {
+    top: -2px;
+  }
+
+  /* line 14, ../../../app/widgets/loading.scss */
+  40% {
+    top: 1px;
+  }
+
+  /* line 17, ../../../app/widgets/loading.scss */
+  45% {
+    top: 0;
+  }
+
+  /* line 20, ../../../app/widgets/loading.scss */
+  55% {
+    top: 0;
+  }
+
+  /* line 23, ../../../app/widgets/loading.scss */
+  100% {
+    top: 0;
+  }
+}
+
+/* line 28, ../../../app/widgets/loading.scss */
+.dancing-dots-text {
+  width: 0px;
+  margin: 40px auto;
+}
+
+/* line 33, ../../../app/widgets/loading.scss */
+.dancing-dots-text span span {
+  -webkit-animation-duration: 800ms;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-name: dancing-dots-jump;
+  padding: 1px;
+  position: relative;
+}
+
+/* line 41, ../../../app/widgets/loading.scss */
+.dancing-dots-text span span:nth-child(2) {
+  -webkit-animation-delay: 100ms;
+}
+
+/* line 45, ../../../app/widgets/loading.scss */
+.dancing-dots-text span span:nth-child(3) {
+  -webkit-animation-delay: 200ms;
+}

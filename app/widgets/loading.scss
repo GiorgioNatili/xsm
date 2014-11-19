@@ -1,0 +1,47 @@
+@-webkit-keyframes dancing-dots-jump {
+  0% {
+    top: 0;
+  }
+  5% {
+    top: -10px;
+  }
+  25% {
+    top: 3px;
+  }
+  35% {
+    top: -2px;
+  }
+  40% {
+    top: 1px;
+  }
+  45% {
+    top: 0;
+  }
+  55% {
+    top: 0;
+  }
+  100% {
+    top: 0;
+  }
+}
+
+.dancing-dots-text {
+  width: 0px;
+  margin: 40px auto;
+}
+
+.dancing-dots-text span span {
+  -webkit-animation-duration: 800ms;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-name: dancing-dots-jump;
+  padding: 1px;
+  position: relative;
+}
+
+.dancing-dots-text span span:nth-child(2) {
+  -webkit-animation-delay: 100ms;
+}
+
+.dancing-dots-text span span:nth-child(3) {
+  -webkit-animation-delay: 200ms;
+}

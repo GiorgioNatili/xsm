@@ -1,0 +1,146 @@
+p &nbsp;
+
+dl
+    dt Name:
+    dd(ng-bind="patientName()")
+    dt Age:
+    dd(ng-bind="m()['screen.age']")
+    dt Grade:
+    dd(ng-bind="grade()")
+    dt CRAFFT:
+    dd(ng-bind="getCRAFFT()")
+    dt RAFFT:
+    dd(ng-bind="getRAFFT()")
+    dt Risk:
+    dd 
+        span(ng-if="getRisk() == 'LOW'") LOW
+        span(ng-if="getRisk() == 'MEDIUM'") MEDIUM
+        span(ng-if="getRisk() == 'HIGH'") HIGH  
+    dt &nbsp;
+    dd        
+        div.risk   
+            img(ng-if="getRisk() == 'LOW'" src="/survey-schema/pages/images/LOW.gif")
+            img(ng-if="getRisk() == 'MEDIUM'" src="/survey-schema/pages/images/MEDIUM.gif")
+            img(ng-if="getRisk() == 'HIGH'" src="/survey-schema/pages/images/HIGH.gif")
+div(ng-if="noUse()")
+    p <br />
+      .badge.good NO USE
+      | <br /><br />- Reported no&nbsp;
+      span(ng-if="grade() < 6") LIFETIME
+      span(ng-if="grade() >= 6") PAST YEAR
+      | &nbsp;use of alcohol, tobacco, marijuana or other drugs.
+    p.do Reinforce healthy choices with praise and encouragement:<br />
+        li "I’m glad you’re not drinking or using drugs, that’s a smart decision. When you talk to your friends, what is the main reason that you tell them for not using?"
+        li "My recommendation as your doctor is to not use any drugs or alcohol. There are numerous harmful health effects of substance use for young people."
+.section(ng-if="!noUse()") Reported&nbsp;
+    span(ng-if="grade() < 6") LIFETIME
+    span(ng-if="grade() >= 6") PAST YEAR
+    | &nbsp;use of:&nbsp;
+    .useLine
+        .badge.bad(ng-if="useOf('Alc')") ALCOHOL
+        span(ng-if="daysOf('Alc')") {{daysOf('Alc')}} days of use
+        .badge.good(ng-if="!useOf('Alc')") NO ALCOHOL
+        | &nbsp;
+    .useLine
+        .badge.bad(ng-if="useOf('Tob')") TOBACCO
+        span(ng-if="daysOf('Tob')") {{daysOf('Tob')}} days of use    
+        .badge.good(ng-if="!useOf('Tob')") NO TOBACCO
+        |&nbsp;        
+    .useLine
+        .badge.bad(ng-if="useOf('Mj')") MARIJUANA
+        span(ng-if="daysOf('Mj')") {{daysOf('Mj')}} days of use    
+        .badge.good(ng-if="!useOf('Mj')") NO MARIJUANA
+        |&nbsp;          
+    .useLine
+        .badge.bad(ng-if="useOf('Drug')") OTHER DRUGS
+        span(ng-if="daysOf('Drug')") {{daysOf('Drug')}} days of use    
+        .badge.good(ng-if="!useOf('Drug')") NO OTHER DRUGS
+        |&nbsp;        
+    .useLine
+        p.do Learn more about their use pattern, problems, experiences, and risks taken:
+            li “How much do you usually have? What’s the most you’ve had at one time?”
+div(ng-if="getRAFFT() > 0")
+    p.do(ng-if="getRAFFT() == 1") Discuss RAFFT Item:
+    p.do(ng-if="getRAFFT() > 1") Discuss RAFFT Items:
+        li(ng-if="getRAFFT() == 1") "Can you tell me a little bit more about how... [RAFFT problem]"
+        li(ng-if="getRAFFT() > 1") "Can you tell me a little bit more about how... [RAFFT problems]"        
+    .useLine
+        .badge.bad(ng-if="isScreenYes('Relax')") RELAX
+        span.note(ng-if="isScreenYes('Relax')") &nbsp; (...you use alcohol or drugs to RELAX or feel better about yourself?)
+    .useLine
+        .badge.bad(ng-if="isScreenYes('Alone')") ALONE
+        span.note(ng-if="isScreenYes('Alone')") &nbsp; (...you use alcohol or drugs by yourself, ALONE?)
+    .useLine
+        .badge.bad(ng-if="isScreenYes('Forget')") FORGET
+        span.note(ng-if="isScreenYes('Forget')") &nbsp; (...you FORGET things you did while using alcohol or drugs?)
+    .useLine
+        .badge.bad(ng-if="isScreenYes('Family')") FAMILY
+        span.note(ng-if="isScreenYes('Family')") &nbsp; (...your FAMILY or friends tell you that you should cut down your alcohol or drug use?)
+    .useLine
+        .badge.bad(ng-if="isScreenYes('Trouble')") TROUBLE
+        span.note(ng-if="isScreenYes('Trouble')") &nbsp; (...you have gotten into TROUBLE while you were using alcohol or drug use?)
+div
+    p.do Mention health risks of substance use:
+    p Substance use can:
+    li “harm your brain development, which continues all the way into your 20's”
+    li “interfere with your ability to learn and remember things”
+    li “drop your IQ”
+    li “lead to addiction, major depression, anxiety disorders, and psychosis”
+    li “cause wrinkled skin, stained teeth, bad breath, vomiting, and  doing things that are embarrassing or worse”
+    li(ng-if="isGirl()") "increase your risk of sexual assault, getting an STD or pregnant, and fetal alcohol injury if you are pregnant"
+div
+    p.do Discuss driving/riding risks:
+    li "Alcohol, marijuana, and many other drugs impair driving ability and can cause accidents.”
+    li “Drug and alcohol related car crashes are a leading cause of death for young people.”    
+div(ng-if="hasCar()")
+    .badge.bad(ng-if="isScreenYes('Drive')") DRIVE
+    span(ng-if="isScreenYes('Drive')") "When did you last drive a car after using alcohol or drugs?"
+    .badge.bad(ng-if="isScreenYes('Ride')") RIDE
+    span(ng-if="isScreenYes('Ride')") "When did you last ride in a car with someone who had been using alcohol or drugs?"
+    li “Knowing that you have been in an unsafe driving situation really worries me. Can you tell me a little bit more about it?”
+    p.do Give the Contract for Life:
+        li “Please bring this home, discuss it with your parents, and let me know if you have any questions.”    
+    p.do If adolescent reveals that driver is a parent, sibling or other close relative:
+        li.do Discuss a safety plan, consider a follow-up visit if there is not enough time for discussion
+        li "I will speak with your parents about the Contract for Life. I do this with parents of all my patients."
+        li "Please let me know if this ever happens again."
+div(ng-if="!hasCar()")
+    .useLine
+        .badge.good CAR -
+        span.note (NO reported riding with a driver who had been using.)
+    .useLine
+        p.do(ng-if="grade() >= 9") Anticipatory Guidance for Driving/Riding:      
+        p.do(ng-if="grade() < 9") Anticipatory Guidance for Riding:
+        p.i “For your safety:”
+            li “Don’t ever get in a car with someone else who has been using drugs or drinking, even if that person doesn’t seem high or drunk.”
+            li(ng-if="grade() >= 9") “Please don’t drive a car after using drugs or drinking, even if you don’t feel drunk or high.”
+            li “Please make arrangements ahead of time for safe transportation”
+        p.do Give the Contract for Life:
+            li “Please bring this home, discuss it with your parents, and let me know if you have any questions.”
+p.do Peer Use:
+div(ng-if="!friendAnyUse()")
+    .useLine
+        .badge.good NO FRIEND USE
+        |&nbsp;
+div(ng-if="friendAnyUse()")
+    .useLine
+        .badge.bad FRIEND USE
+        | Reported that FRIEND(S) have PAST YEAR:
+    p(ng-if="friendUseOf('Alc')") {{friendFreqOf('Alc')}} use of ALCOHOL
+    span(ng-if="friendDrinks() == 1") , who usually have 1 drink on an occaision    
+    span(ng-if="friendDrinks() > 1") , who usually have {{friendDrinks()}} drinks on an occaision
+    p(ng-if="friendUseOf('Tob')") {{friendFreqOf('Tob')}} use of TOBACCO
+    p(ng-if="friendUseOf('Mj')") {{friendFreqOf('Mj')}} use of MARIJUANA
+    p(ng-if="friendUseOf('Drug')") {{friendFreqOf('Drug')}} use of OTHER DRUGS
+    span.do Inquire about peers&#8217; risky habits:
+    li How many close friends do you have? How many of these close friends drink, smoke or use other drugs?
+    li How do you think they would react if you asked them to stop?
+div
+    p.do Using information that you know about the patient, build on their strengths to give brief advice:
+    li "You have so much promise. I would hate to see alcohol or drugs get in the way of achieving your future goals and the things you care about."
+    li(ng-if="noUse()") "I hope you will come back and talk with me if you ever have questions about drugs or alcohol, feel tempted to try them,
+        | or even if you use them. I won’t judge you. I will keep our discussion confidential, unless someone is in danger.
+        | Your health is my primary concern.”
+    p.do(ng-if="!noUse()") Express concern and ask for a follow-up visit:
+    li(ng-if="!noUse()") “I am concerned for you. Would you be willing to stop using for a week or two until we can meet again?”
+button.close(ng-click="hideDoctorReport()") CLOSE

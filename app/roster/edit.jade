@@ -1,0 +1,9 @@
+div.modal.contactWindow(tabindex="-1" role="dialog")
+    div.modal-dialog
+        div.modal-content
+            div(ng-controller="editCtrl")
+                label {{label}}
+                input(type="text" ng-model="value"
+                    autofocus="true" ng-keypress="maybeEnter($event, key, value)")
+
+                button.btn(ng-click="set(key, value)") Submit

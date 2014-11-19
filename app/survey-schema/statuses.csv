@@ -1,0 +1,9 @@
+survey,00No Demograhics,01No  Visit,02No Show,03Refused,04No Assent,05No Contact,06No Screen,07No useHx,08No TLFB,09No Assess,10No Post
+demographics,Y,N,N,N,N,N,N,N,N,N,N
+visit,N,Y,Y,Y,Y,N,N,N,N,N,N
+contact,N,N,N,N,N,Y,N,N,N,N,N
+screen,N,N,N,N,N,N,Y,N,N,N,N
+useHistory,N,N,N,N,N,N,N,Y,N,N,N
+tfb,N,N,N,N,N,N,N,N,Y,N,N
+assess,N,N,N,N,N,N,N,N,N,Y,N
+post,N,N,N,N,N,N,N,N,N,N,Y

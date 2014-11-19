@@ -1,0 +1,5 @@
+body { behavior: url(templates/default/scripts/csshover3.htc); }
+
+.sendConfirm .cont .yes {
+	margin:10px 0 0 12px;
+}

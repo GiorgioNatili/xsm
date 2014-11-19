@@ -1,0 +1,7 @@
+.overlay(ng-controller="setMachineCtrl"): div.dialog
+  h1 CeASAR Study Manager
+  p Please give this computer a unique Machine ID:
+  input(type='text' ng-model='machine')
+  button.btn(type='button'
+  ng-click='setMachineId(machine)') Submit
+  p.error(ng-if='machineInvalid') Machine ID must be a unique non zero 2 digit integer.

@@ -1,0 +1,201 @@
+@mixin button {
+  & {
+    display: inline-block;
+    white-space: nowrap;
+    background-color: #ccc;
+    background-image: linear-gradient(top, #eee, #ccc);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#eeeeee', EndColorStr='#cccccc');
+    border: 1px solid #777;
+    padding: 0 1.5em;
+    margin: 0.5em;
+    font: bold 1em/2em Arial, Helvetica;
+    text-decoration: none;
+    color: #333;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, .8);
+    border-radius: .2em;
+    box-shadow: 0 0 1px 1px rgba(255, 255, 255, .8) inset, 0 1px 0 rgba(0, 0, 0, .3);
+  }
+
+  &:hover {
+    background-color: #ddd;
+    background-image: linear-gradient(top, #fafafa, #ddd);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#fafafa', EndColorStr='#dddddd');
+  }
+
+  &:active {
+    box-shadow: 0 0 4px 2px rgba(0, 0, 0, .3) inset;
+    position: relative;
+    top: 1px;
+  }
+
+  &:focus {
+    outline: 0;
+    background: #fafafa;
+  }
+}
+
+.tfb-wrap{
+  background-color:white;
+  width:100%;
+  overflow:auto;
+}
+
+.tfb {
+  position: relative;
+  font-family: fira, "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
+  -webkit-font-feature-settings: "tnum" 1; // fira explicitly needs tabular numbers
+  -webkit-user-select: none;
+  line-height: 18px;
+  font-size: 11px;
+
+  .overlay-wrap {
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+  }
+  div.overlay {
+    width: 468px;
+    background-color: rgba(white, 0.90);
+    padding: 12px;
+    padding-bottom: 0px;
+    line-height: 24px;
+    font-size:20px;
+    a {
+      margin-right: 20px;
+      margin-bottom: 10px;
+      margin-top: 10px;
+      padding: 12px;
+      display: inline-block;
+      color: white;
+      background-color: #4A90E2;
+      white-space: nowrap;
+    }
+    a.right {
+      background-color: #F5A623;
+    }
+    .drug {
+      margin: 2px 0px;
+    }
+    input{
+      font-size:20px;
+    }
+  }
+  .error {
+    color: red;
+    white-space: nowrap;
+  }
+  .calendar {
+    line-height: 14px;
+    width: 100%;
+    margin-top: 50px;
+    table-layout: fixed;
+    border-collapse: separate;
+
+    tr, tbody {
+      width: 100%;
+    }
+    td {
+      width: 468px / 7px;
+      height: 45px;
+      border-top: 1px solid #efefef;
+    }
+    tr.monthHead {
+      font-family: firasc;
+      text-align: center;
+      vertical-align: bottom;
+      td {
+        padding-bottom: 12px;
+      }
+    }
+    tr.week td {
+      vertical-align: text-top;
+      padding: 0px 4px;
+    }
+    .weekend {
+      background: rgba(black, .03);
+    }
+    .line {
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+    .selectable {
+      &:hover {
+        background-color: #CDE2FA;
+      }
+    }
+    &.weekMode {
+      .day:not(.selected) {
+        opacity: .1;
+      }
+      .outOfMonth {
+        opacity: .1;
+      }
+    }
+    &:not(.weekMode) {
+      .selected {
+        background-color: #CDE2FA;
+      }
+      .null {
+        opacity: .1;
+      }
+    }
+    .selectable.monthHead .title {
+      @include button;
+    }
+    .event {
+      color: #4A90E2;
+    }
+    .labs .alc {
+      color: darken(#D0021B, 10%);
+    }
+    .vals .alc {
+      color: #D0021B;
+    }
+    .vals .tob {
+      color: #F5A623;
+    }
+    .labs .tob {
+      color: darken(#F5A623, 30%);
+    }
+    .labs .pot {
+      color: darken(#7ED321, 10%);
+    }
+    .vals .oth {
+      color: #9013FE;
+    }
+    .labs .oth {
+      color: darken(#9013FE, 20%);
+    }
+    .vals .pot {
+      color: #7ED321;
+    }
+    .labs span, .vals span {
+      display: inline-block;
+      width: (468px / 7) / 4 - 2px;
+      text-align: center;
+    }
+  }
+}
+
+@media only screen and (min-width: 468px) {
+  .tfb {
+    width: 468px;
+    margin: auto;
+  }
+}
+
+@media only screen and (min-width: 956px) {
+  .tfb {
+    width: 836px;
+    margin: auto;
+    div.overlay {
+      width: 386px !important;
+    }
+  }
+  .calendar {
+    width: 486px !important;
+    margin-left: 386px !important;
+    margin-top: 0px !important;
+  }
+}

@@ -1,0 +1,7 @@
+name,class,type,title,next
+demo,clinical,complexQuestions,Demographics,
+screen,screen,complexQuestions,CRAFFT,
+useHistory,clinical,complexQuestions,History,tfb
+tfb,na,tfb,Time Line,assess
+assess,clinical,complexQuestions,Assess,
+post,clinical,complexQuestions,Post Visit,

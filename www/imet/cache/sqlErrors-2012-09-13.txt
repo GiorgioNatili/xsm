@@ -1,0 +1,37 @@
+2012-09-13 11:35
+SELECT * FROM session_tool3_cards
+							WHERE id_stimulant_fk IN ()
+							ORDER BY id_stimulant_fk
+					
+You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')
+							ORDER BY id_stimulant_fk' at line 2
+-------------------------------------------------------------------------
+2012-09-13 11:37
+SELECT * FROM session_tool3_cards
+							WHERE id_stimulant_fk IN ()
+							ORDER BY id_stimulant_fk
+					
+You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')
+							ORDER BY id_stimulant_fk' at line 2
+-------------------------------------------------------------------------
+2012-09-13 11:38
+SELECT * FROM session_tool3_cards
+							WHERE id_stimulant_fk IN ()
+							ORDER BY id_stimulant_fk
+					
+You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')
+							ORDER BY id_stimulant_fk' at line 2
+-------------------------------------------------------------------------
+2012-09-13 11:41
+SELECT * FROM session_tool3_cards
+							WHERE id_stimulant_fk IN ()
+							ORDER BY id_stimulant_fk
+					
+You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')
+							ORDER BY id_stimulant_fk' at line 2
+-------------------------------------------------------------------------
+2012-09-13 16:48
+insert into session_tool5_answers (`id_patient_fk`,`id_pre_tlfb_stimulant_fk`,`id_calculator_type_fk`,`value`,`input`,`id_value1_fk`,`id_value2_fk`,`text`)values(7,12,12,'66',2,33,146,'Hallucinogens & my: money (66 dollars)\nbuy 2 amusement park tickets.\nbuy 4 books.\nbuy 1 pairs of sunglasses.\n')
+Cannot add or update a child row: a foreign key constraint fails (`ezdb`.`session_tool5_answers`, CONSTRAINT `session_tool5_answers_ibfk_3` FOREIGN KEY (`id_value1_fk`) REFERENCES `calculator_option_values` (`id_calculator_option_value_pk`) ON DELETE CASCADE)
+-------------------------------------------------------------------------
+

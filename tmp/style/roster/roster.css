@@ -1,0 +1,205 @@
+/* line 5, ../../../app/roster/roster.scss */
+.popover {
+  max-width: 800px;
+}
+
+/* line 9, ../../../app/roster/roster.scss */
+.roster {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  padding-bottom: 16px;
+}
+/* line 10, ../../../app/roster/roster.scss */
+.roster .page {
+  overflow: auto;
+  width: 100%;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: row;
+  width: 1200px;
+  margin: 0 auto;
+  background-color: white;
+  border: 1px solid #D1D1D1;
+  position: relative;
+  color: black;
+}
+/* line 19, ../../../app/roster/roster.scss */
+.roster .update, .roster .dataBehind, .roster .newData {
+  background-color: orange;
+  border-bottom: 1px solid #996300;
+  color: white;
+  text-align: center;
+  padding-top: 2px;
+  flex-shrink: 0;
+}
+/* line 27, ../../../app/roster/roster.scss */
+.roster .update {
+  background-color: #e33045;
+  border-bottom: 1px solid #981524;
+}
+/* line 36, ../../../app/roster/roster.scss */
+.roster .master {
+  float: left;
+  width: 850px;
+  display: flex;
+  flex-direction: column;
+}
+/* line 42, ../../../app/roster/roster.scss */
+.roster .master table {
+  display: flex;
+  flex-direction: column;
+  width: 850px;
+  table-layout: fixed;
+  overflow-x: hidden;
+}
+/* line 50, ../../../app/roster/roster.scss */
+.roster .master table.tbody {
+  flex-grow: 1;
+  height: 100%;
+  overflow-y: scroll;
+}
+/* line 56, ../../../app/roster/roster.scss */
+.roster header td {
+  padding: 6px 12px;
+}
+/* line 59, ../../../app/roster/roster.scss */
+.roster .detail {
+  float: right;
+  background-color: #d5e3f4;
+  width: 350px;
+  overflow-y: scroll;
+  padding: 16px;
+}
+/* line 65, ../../../app/roster/roster.scss */
+.roster .detail .disabled a {
+  color: #a4a6b3;
+}
+/* line 68, ../../../app/roster/roster.scss */
+.roster .detail > .inner {
+  display: flex;
+  flex-direction: column;
+}
+/* line 71, ../../../app/roster/roster.scss */
+.roster .detail > .inner > * {
+  flex-shrink: 0;
+}
+/* line 75, ../../../app/roster/roster.scss */
+.roster .detail .detail-entry {
+  display: inline-block;
+}
+/* line 79, ../../../app/roster/roster.scss */
+.roster .detail .popup {
+  float: left;
+}
+/* line 81, ../../../app/roster/roster.scss */
+.roster .detail .popup ul {
+  position: absolute;
+  z-index: 1000;
+}
+/* line 87, ../../../app/roster/roster.scss */
+.roster .detail .surveys p {
+  padding: 6px 0px;
+}
+/* line 89, ../../../app/roster/roster.scss */
+.roster .detail .surveys p a {
+  padding: 6px 0px;
+}
+/* line 94, ../../../app/roster/roster.scss */
+.roster td > div {
+  width: 121.42857px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  cursor: pointer;
+}
+/* line 103, ../../../app/roster/roster.scss */
+.roster td:first-child {
+  padding-left: 16px;
+}
+/* line 106, ../../../app/roster/roster.scss */
+.roster tr.selected {
+  background: #d5e3f4;
+}
+/* line 108, ../../../app/roster/roster.scss */
+.roster tr.selected td div {
+  cursor: default;
+}
+/* line 112, ../../../app/roster/roster.scss */
+.roster tr {
+  border-bottom: 1px solid rgba(25, 33, 39, 0.05);
+}
+/* line 115, ../../../app/roster/roster.scss */
+.roster tr:last-child {
+  border-bottom: none;
+}
+/* line 118, ../../../app/roster/roster.scss */
+.roster thead td {
+  font-weight: 600;
+  border-bottom: 1px solid grey;
+}
+/* line 121, ../../../app/roster/roster.scss */
+.roster thead td .sortedBy i {
+  opacity: 1;
+}
+/* line 124, ../../../app/roster/roster.scss */
+.roster thead td i {
+  opacity: 0;
+  -webkit-transition: opacity 200ms ease-in;
+  -moz-transition: opacity 200ms ease-in;
+  -ms-transition: opacity 200ms ease-in;
+  -o-transition: opacity 200ms ease-in;
+  transition: opacity 200ms ease-in;
+}
+/* line 135, ../../../app/roster/roster.scss */
+.roster thead td .notSortedBy:hover i {
+  opacity: 0.4;
+}
+/* line 140, ../../../app/roster/roster.scss */
+.roster .unset {
+  padding-left: 16px;
+  border-left: none;
+}
+/* line 144, ../../../app/roster/roster.scss */
+.roster textarea {
+  line-height: 24px;
+}
+/* line 147, ../../../app/roster/roster.scss */
+.roster textarea[rows="4"] {
+  height: 50px;
+}
+/* line 150, ../../../app/roster/roster.scss */
+.roster textarea[rows="8"] {
+  height: 200px;
+}
+/* line 153, ../../../app/roster/roster.scss */
+.roster input {
+  width: 100%;
+}
+/* line 156, ../../../app/roster/roster.scss */
+.roster h4 {
+  color: #4a90e2;
+  font-weight: bold;
+}
+/* line 160, ../../../app/roster/roster.scss */
+.roster .btn {
+  margin-top: 12px;
+}
+/* line 163, ../../../app/roster/roster.scss */
+.roster .clear {
+  float: right;
+  color: #e33045;
+  font-size: 80%;
+}
+/* line 168, ../../../app/roster/roster.scss */
+.roster h4.details a {
+  font-weight: normal;
+}
+
+/* line 173, ../../../app/roster/roster.scss */
+.modal.fade .modal-dialog {
+  -webkit-transition: -webkit-transform .1s ease-out;
+}

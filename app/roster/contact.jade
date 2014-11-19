@@ -1,0 +1,13 @@
+div.modal.contactWindow(tabindex="-1" role="dialog")
+    div.modal-dialog
+        div.modal-content
+            div(ng-controller="contactCtrl")
+                label Notes
+                textarea(rows="4"
+                ng-model="logEntry")
+                button.btn(ng-click="submitLogEntry(logEntry, logEntryType)") Submit
+                a.hideLnk(ng-click="$hide()") Hide
+
+                label Contact Method
+                select(ng-model="logEntryType"
+                ng-options="entry.key as entry.title for entry in allLogEntryTypes()")

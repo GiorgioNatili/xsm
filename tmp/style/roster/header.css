@@ -1,0 +1,107 @@
+/* line 3, ../../../app/roster/header.scss */
+header {
+  flex-shrink: 0;
+}
+
+/* line 7, ../../../app/roster/header.scss */
+header > .inner {
+  width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+}
+/* line 12, ../../../app/roster/header.scss */
+header > .inner .title {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+}
+/* line 17, ../../../app/roster/header.scss */
+header > .inner .utils {
+  justify-content: flex-end;
+  flex: 1;
+  padding-right: 16px;
+  display: flex;
+  flex-direction: row;
+}
+/* line 24, ../../../app/roster/header.scss */
+header > .inner div, header > .inner h1, header > .inner h2 {
+  display: inline-block;
+}
+/* line 27, ../../../app/roster/header.scss */
+header > .inner h2 {
+  position: relative;
+  top: 0px;
+}
+/* line 31, ../../../app/roster/header.scss */
+header > .inner input {
+  position: relative;
+  top: -4px;
+  right: -12px;
+}
+
+/* line 38, ../../../app/roster/header.scss */
+header > .inner {
+  padding-top: 8px;
+  padding-bottom: 6px;
+  color: black;
+  font-weight: 300;
+  margin-top: 1em;
+  margin-bottom: 5px;
+  font-size: 14px;
+  white-space: nowrap;
+}
+/* line 47, ../../../app/roster/header.scss */
+header > .inner .title {
+  padding-left: 16px;
+}
+/* line 50, ../../../app/roster/header.scss */
+header > .inner .utils {
+  padding-right: 16px;
+}
+/* line 52, ../../../app/roster/header.scss */
+header > .inner .utils li {
+  padding-left: 24px;
+}
+/* line 56, ../../../app/roster/header.scss */
+header > .inner a {
+  font-weight: 500;
+  margin-left: 12px;
+  text-decoration: underline;
+}
+/* line 61, ../../../app/roster/header.scss */
+header > .inner .dangerous {
+  color: #e33045;
+}
+/* line 64, ../../../app/roster/header.scss */
+header > .inner .dropdown a {
+  text-decoration: none;
+}
+/* line 67, ../../../app/roster/header.scss */
+header > .inner .dropdown-menu a {
+  margin-left: 0;
+}
+/* line 70, ../../../app/roster/header.scss */
+header > .inner h1 {
+  font-weight: 700;
+  font-size: 12px;
+  color: black;
+}
+/* line 75, ../../../app/roster/header.scss */
+header > .inner h2 {
+  font-weight: 300;
+  font-size: 18px;
+  font-style: italic;
+  color: black;
+  padding-left: 3px;
+  padding-right: 12px;
+}
+/* line 83, ../../../app/roster/header.scss */
+header > .inner input {
+  padding: 4px;
+  margin: 0;
+  background: rgba(255, 255, 255, 0.8);
+  padding-left: 12px;
+  margin-right: 12px;
+  width: 200px;
+}

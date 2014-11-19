@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<meta lang="en" />
+<meta name="robots" content="NOINDEX, NOFOLLOW">
+<meta name="viewport" content="user-scalable=no"/>
+<head><title>
+Test CSM
+</title>
+</head>
+<body >
+<div class="main">
+  <div class="container">
+    <form id="test" action="db.php" method="post"> 
+        <input id = "foo" type="hidden" name="foo" value="bar" />
+		<h3>Testing ajax post to db.php...</h3>
+    </form>   
+  </div><!-- end container-->
+</div><!-- end main -->
+
+<!-- Script -->
+<script src="js/jquery-1.8.0.min.js" type="text/javascript"></script>
+<script>
+"use strict";
+var schema = "id int(8) NOT NULL AUTO_INCREMENT, machine int(4), datetime varchar(50), createSeq int(4), ra varchar(50), participantID 	int(4), keyname varchar(255), value varchar(32000), unique (machine, datetime, createSeq), primary key (id)";
+var postData = 
+[
+    {
+        "datetime": 20140411150303,
+        "ra": "LS",
+        "createSeq": 1,
+        "participantID": "101",
+        "keyname": "address1",
+        "value": "Green's Street"
+    },
+    {
+        "datetime": 20140411150304,
+        "ra": "LS",
+        "createSeq": 1,
+        "participantID": "101",
+        "keyname": "address2",
+        "value": "Suite /mercy"
+    }
+]	
+;
+
+$(function() {
+var response = $.ajax({
+    type: "PUT",
+    url: "db.php?table=TESTtable",
+    contentType: "application/json; charset=utf-8",
+    data: schema 
+	})
+	.done(function(server_response) {
+		console.log(JSON.stringify(server_response));
+    })
+    .fail(function(server_response) {
+		console.log(JSON.stringify(server_response));
+    })
+;
+
+});
+
+</script>
+
+</body>
+</html>

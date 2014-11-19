@@ -1,0 +1,23 @@
+section,key,title
+header,site,Site
+header,id,ID
+header,status,Status
+header,demo.mrn,MR#
+header,demo.fname,First Name
+header,demo.lname,Last Name
+header,demo.dob,DOB
+header,demo.methodContact,Preferred Contact method
+details1,demo.EmailAddress1,Email1
+details1,demo.EmailAddress2,Email2
+details2,demo.parentEmail1,Parent email 1
+details2,demo.parentEmail2,Parent email 2
+details2,demo.particCellPhone,Cell Phone
+details2,demo.particHomePhone,Home Phone
+details2,demo.particWorkPhone,Work Phone
+details2,demo.address1,Address1
+details2,demo.address2,Address2
+details2,demo.city,City
+details2,demo.state,State
+details2,demo.zip,Zip Code
+details1,demo.optout,Opt Out
+details1,demo.confidential,Confidential

@@ -1,0 +1,14 @@
+@import "../style/fira";
+@import "compass/reset";
+
+body, html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  font-family: fira, "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
+  -webkit-font-feature-settings: "tnum" 1; // fira explicitly needs tabular numbers
+  -webkit-user-select: none;
+  line-height: 20px;
+}

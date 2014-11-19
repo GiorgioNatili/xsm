@@ -1,0 +1,9 @@
+div.btn-group
+    button(
+    ng-repeat="option in options"
+    type="button"
+    class="btn btn-primary"
+    ng-model="model"
+    ng-click="activate(option)"
+    ng-class="{active:model == option}"
+    ) {{option}}

@@ -1,0 +1,33 @@
+{
+  "src_folders" : ["."],
+  "output_folder" : "../tmp/test/reports",
+  "custom_commands_path" : "",
+  
+  "selenium" : {
+    "start_process" : false,
+    "server_path" : "",
+    "log_path" : "",
+    "host" : "127.0.0.1",
+    "port" : 5555  
+  },
+
+  "test_settings" : {
+    "default" : {
+      "launch_url" : "http://localhost",
+      "selenium_host" : "127.0.0.1",
+      "selenium_port" : 5555,
+      "silent": true,
+      "output": true,
+      "firefox_profile": false,
+      "screenshots" : {
+        "enabled" : true,
+        "path" : "../tmp/shots"
+      },
+      "desiredCapabilities": {
+        "browserName": "chrome",
+        "javascriptEnabled": true,
+        "acceptSslCerts": true
+      }
+    }
+  }
+}

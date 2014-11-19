@@ -1,0 +1,11 @@
+/* line 3, ../../../app/style/base.scss */
+a {
+  text-decoration: none;
+  font-weight: bold;
+  color: #4a90e2;
+}
+
+/* line 9, ../../../app/style/base.scss */
+div, span, td {
+  cursor: default;
+}
