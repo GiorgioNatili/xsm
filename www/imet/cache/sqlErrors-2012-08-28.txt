@@ -1,25 +1,0 @@
-2012-08-28 20:33
-insert into session_tool5_answers (`id_patient_fk`,`id_pre_tlfb_stimulant_fk`,`id_calculator_type_fk`,`value`,`input`,`id_value1_fk`,`id_value2_fk`,`text`)values(16,13,17,'2',1,2,149,'Inhalants & my: money (2 dollars)\n')
-Cannot add or update a child row: a foreign key constraint fails (`ezdb`.`session_tool5_answers`, CONSTRAINT `session_tool5_answers_ibfk_3` FOREIGN KEY (`id_value1_fk`) REFERENCES `calculator_option_values` (`id_calculator_option_value_pk`) ON DELETE CASCADE)
--------------------------------------------------------------------------
-2012-08-28 20:34
-insert into session_tool5_answers (`id_patient_fk`,`id_pre_tlfb_stimulant_fk`,`id_calculator_type_fk`,`value`,`input`,`id_value1_fk`,`id_value2_fk`,`text`)values(16,13,17,'2',1,2,149,'Inhalants & my: money (2 dollars)\n')
-Cannot add or update a child row: a foreign key constraint fails (`ezdb`.`session_tool5_answers`, CONSTRAINT `session_tool5_answers_ibfk_3` FOREIGN KEY (`id_value1_fk`) REFERENCES `calculator_option_values` (`id_calculator_option_value_pk`) ON DELETE CASCADE)
--------------------------------------------------------------------------
-2012-08-28 21:45
-insert into session_tool7_introcard_answers (`id_patient_fk`,`session`)values(16,2)
-Cannot add or update a child row: a foreign key constraint fails (`ezdb`.`session_tool7_introcard_answers`, CONSTRAINT `session_tool7_introcard_answers_ibfk_2` FOREIGN KEY (`id_session_tool7_introcard_fk`) REFERENCES `session_tool7_introcard` (`id_session_to)
--------------------------------------------------------------------------
-2012-08-28 21:46
-insert into session_tool7_introcard_answers (`id_patient_fk`,`session`)values(16,2)
-Cannot add or update a child row: a foreign key constraint fails (`ezdb`.`session_tool7_introcard_answers`, CONSTRAINT `session_tool7_introcard_answers_ibfk_2` FOREIGN KEY (`id_session_tool7_introcard_fk`) REFERENCES `session_tool7_introcard` (`id_session_to)
--------------------------------------------------------------------------
-2012-08-28 22:38
-insert into session_tool7_introcard_answers (`id_patient_fk`,`session`)values(16,2)
-Cannot add or update a child row: a foreign key constraint fails (`ezdb`.`session_tool7_introcard_answers`, CONSTRAINT `session_tool7_introcard_answers_ibfk_2` FOREIGN KEY (`id_session_tool7_introcard_fk`) REFERENCES `session_tool7_introcard` (`id_session_to)
--------------------------------------------------------------------------
-2012-08-28 22:39
-insert into session_tool7_introcard_answers (`id_patient_fk`,`session`)values(16,2)
-Cannot add or update a child row: a foreign key constraint fails (`ezdb`.`session_tool7_introcard_answers`, CONSTRAINT `session_tool7_introcard_answers_ibfk_2` FOREIGN KEY (`id_session_tool7_introcard_fk`) REFERENCES `session_tool7_introcard` (`id_session_to)
--------------------------------------------------------------------------
-
