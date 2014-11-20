@@ -6,7 +6,7 @@ lib-cov
 *.pid
 *.gz
 *.iml
-*./idea
+./idea
 pids
 logs
 results
