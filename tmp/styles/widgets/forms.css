@@ -1,0 +1,105 @@
+/* line 3, ../../../app/styles/widgets/forms.scss */
+body, input, textarea, select {
+  font-size: 14px;
+}
+
+/* line 6, ../../../app/styles/widgets/forms.scss */
+a {
+  cursor: pointer;
+}
+
+/* line 9, ../../../app/styles/widgets/forms.scss */
+label {
+  font-family: firasc;
+  display: block;
+  clear: left;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 0 0 4px 0;
+  -webkit-user-select: none;
+}
+
+/* line 19, ../../../app/styles/widgets/forms.scss */
+input[type=text], input[type=password], input[type=number], input[type=date], textarea {
+  margin-bottom: 16px;
+  border: 1px solid gray;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 16px;
+  padding-left: 12px;
+  font-size: 14px;
+}
+
+/* line 28, ../../../app/styles/widgets/forms.scss */
+input[type=date] {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+/* line 33, ../../../app/styles/widgets/forms.scss */
+button {
+  margin-bottom: 16px !important;
+}
+
+/* line 37, ../../../app/styles/widgets/forms.scss */
+input[type=radio], input[type=check] {
+  display: inline-block;
+}
+
+/* line 41, ../../../app/styles/widgets/forms.scss */
+input:focus, textarea:focus {
+  background-color: white;
+}
+
+/* line 45, ../../../app/styles/widgets/forms.scss */
+input[type=submit] {
+  width: 130px;
+  height: 45px;
+  display: block;
+  clear: left;
+}
+
+/* line 52, ../../../app/styles/widgets/forms.scss */
+.btn {
+  background-color: #4a90e2 !important;
+  color: white !important;
+  margin-top: 5px;
+}
+
+/* line 58, ../../../app/styles/widgets/forms.scss */
+.btn-primary.active, .btn:active {
+  background-color: #3276b1;
+}
+
+/* line 62, ../../../app/styles/widgets/forms.scss */
+.btn-primary:hover:not(.active) {
+  background-color: rgba(255, 255, 255, 0.8);
+  color: black;
+  border-right-color: rgba(0, 0, 0, 0.25);
+  border-bottom-color: rgba(0, 0, 0, 0.25);
+}
+/* line 67, ../../../app/styles/widgets/forms.scss */
+.btn-primary:hover:not(.active):not(:first-child) {
+  border-left-color: rgba(0, 0, 0, 0.25);
+}
+
+/* line 72, ../../../app/styles/widgets/forms.scss */
+.btn {
+  border-top: none;
+  padding: 12px;
+  border-radius: 0;
+  color: black;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-color: rgba(25, 33, 39, 0.15);
+}
+
+/* line 81, ../../../app/styles/widgets/forms.scss */
+.btn:first-child {
+  border-left: 4px solid black;
+}
+
+/* line 85, ../../../app/styles/widgets/forms.scss */
+.error {
+  color: #e33045;
+  font-family: firasc;
+  font-weight: 600;
+}

@@ -35,7 +35,7 @@ module.exports = function () {
     response.render(request.params[0]);
   });
   app.get("/*.css", function (request, response, next) {
-    response.sendFile(ROOT + 'tmp/style/' + request.params[0] + '.css');
+    response.sendFile(ROOT + 'tmp/' + request.params[0] + '.css');
   });
   app.get("/*.*", function (request, response, next) {
     response.sendFile(ROOT + 'app/' + request.params[0] + '.' + request.params[1]);
