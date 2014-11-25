@@ -1,0 +1,26 @@
+{
+  "name": "xsm-amit",
+  "version": "0.1.0",
+  "description": "A survey app used to collect sensitive data across Mass hospitals",
+  "main": "index.js",
+  "scripts": {
+      "start": "node app/try_app.js"
+    },
+  "dependencies": {
+      "express": "~4.9.x"
+    },
+  "engines": {
+      "node": "0.10.x"
+    },
+  "repository": {
+      "type": "git",
+      "url": "https://github.com/GiorgioNatili/xsm"
+    },
+  "keywords": [
+      "node",
+      "heroku",
+      "express"
+    ],
+  "license": "MIT"
+}
+
