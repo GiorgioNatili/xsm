@@ -1,41 +1,32 @@
 {
-  "name": "xsm-amit",
-  "version": "0.1.0",
-  "description": "A survey app used to collect sensitive data across Mass hospitals",
-  "main": "index.js",
-  "scripts": {
-      "start": "node app/try_app.js"
-    },
-  "dependencies": {
-      "express": "~4.9.x",
-      "Faker": "0.7.0",
-      "body-parser": "1.8.3",
-      "checkdigit": "1.1.0",
-      "cheerio": "0.15.0",
-      "csv": "0.3.7",
-      "jade": "1.2.0",
-      "knox": "0.8.9",
-      "levenshtein": "1.0.4",
-      "nightwatch": "0.3.7",
-      "request": "2.34.0",
-      "requirejs": "2.1.11",
-      "should": "3.1.3",
-      "sqlite3": "2.2.0",
-      "underscore": "1.6.0"
-
-    },
-  "engines": {
-      "node": "0.10.x"
-    },
+  "name": "csm",
+  "version": "0.0.1",
   "repository": {
-      "type": "git",
-      "url": "https://github.com/GiorgioNatili/xsm"
-    },
-  "keywords": [
-      "node",
-      "heroku",
-      "express"
-    ],
-  "license": "MIT"
+    "type": "git",
+    "url": "https://github.com/amit-bansil/xsm.git"
+  },
+  "dependencies": {
+    "Faker": "0.7.0",
+    "body-parser": "1.8.3",
+    "bower": "1.3.12",
+    "checkdigit": "1.1.0",
+    "cheerio": "0.15.0",
+    "csv": "0.3.7",
+    "express": "4.9.4",
+    "jade": "1.2.0",
+    "knox": "0.8.9",
+    "levenshtein": "1.0.4",
+    "mocha": "1.17.1",
+    "nightwatch": "0.3.7",
+    "request": "2.34.0",
+    "requirejs": "2.1.11",
+    "selenium-webdriver": "2.40.0",
+    "should": "3.1.3",
+    "sqlite3": "2.2.0",
+    "supervisor": "0.5.7",
+    "underscore": "1.6.0"
+  },
+  "devDependencies": {
+    "mysql": "~2.5.3"
+  }
 }
-

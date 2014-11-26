@@ -3,6 +3,17 @@ var _ = require('underscore');
 var sqlite3 = require("sqlite3").verbose();
 var levenshtein = require('levenshtein');
 var constants = require('../constants');
+var mysql      = require('mysql');
+
+var connection = mysql.createConnection({
+  host     : 'localhost',
+  user     : 'admin',
+  password : '',
+  port : 3306,
+  database:'xsm'
+});
+
+connection.connect();
 
 function BFT(dbFile, initCallback) {
   var dbExists = fs.existsSync(dbFile);
@@ -59,21 +70,33 @@ method.init = function (callback) {
 };
 
 method.getMeta = function (key, callback, err) {
+  console.log('in getMeta', key);
   var that = this;
   if (key in this.metaCache) {
     setTimeout(function () {
       callback(that.metaCache[key]);
     });
   } else {
-    that.db.get('SELECT value FROM META WHERE key = ?', [key],
-      logErrOver(function (result) {
-        if (!result) {
-          result = {value: undefined};
-        }
-        that.metaCache[key] = result.value;
-        callback(result.value);
-      }, err)
-    );
+    //need to handle errors
+
+    var query = 'SELECT value from meta where `key` = \'' + key + '\'';
+    console.log(query);
+    connection.query(query, function(mysqlErr, rows, fields) {
+      if (mysqlErr) throw mysqlErr;
+      var val = rows[0].value;
+      that.metaCache[key] = val;
+      console.info('getMeta called and returning val of', val);
+      callback(val);
+    });
+    // that.db.get('SELECT value FROM META WHERE `key` = ?', [key],
+    //   logErrOver(function (result) {
+    //     if (!result) {
+    //       result = {value: undefined};
+    //     }
+    //     that.metaCache[key] = result.value;
+    //     callback(result.value);
+    //   }, err)
+    // );
   }
 };
 
@@ -82,11 +105,18 @@ method.setMeta = function (key, value, callback, err) {
     this.metaCache[key] = value;
   }
   var that = this;
-  that.db.serialize(function () {
-    that.db.run('DELETE FROM META WHERE key = ?', [key], logErrOver());
-    that.db.run('INSERT INTO META (key, value) VALUES (?, ?)',
-      [key, value], logErrOver(callback, err));
+  connection.query('insert into meta values(\'' + key + '\', \'' + value +'\')', function(mysqlErr, rows, fields) {
+    if (mysqlErr) throw mysqlErr;
+    console.info('setMeta called and should have inserted key/val of', key,value, callback);
+    callback();
+    //callback(result.value);
   });
+
+  // that.db.serialize(function () {
+  //   that.db.run('DELETE FROM META WHERE key = ?', [key], logErrOver());
+  //   that.db.run('INSERT INTO META (key, value) VALUES (?, ?)',
+  //     [key, value], logErrOver(callback, err));
+  // });
 };
 
 //delete all rows from bft
@@ -102,6 +132,7 @@ method.deleteBFT = function (callback) {
 //less than 2 inserted for the the same key within COALESCE_DELAY ms
 //will be delted if the key type is string and they were on the same machine
 method.insert = function (fields, coalesce, callback) {
+  console.info('calling insert...');
   var that = this;
 
   function doCoalesce() {
@@ -167,14 +198,17 @@ method.insert = function (fields, coalesce, callback) {
 
   this.setMeta('hasNonCopied', true, function () {
     if (coalesce) {
+      console.info('in insert and doing coalesce');
       doCoalesce();
     } else {
+      console.info('in insert and doing _insert');
       _insert();
     }
   });
 };
 
 method.getNonCopiedRows = function (start, callback, err) {
+  console.info('calling getNonCopiedRows...');
   var db = this.db;
   var that = this;
 
@@ -199,6 +233,7 @@ method.getNonCopiedRows = function (start, callback, err) {
 };
 
 method.multiInsert = function (rows, callback, err) {
+  console.info('calling multiInsert...');
   var db = this.db;
   db.serialize(function () {
     var stmt = db.prepare('INSERT INTO BFT (' +
@@ -245,6 +280,7 @@ method.markAsCopied = function (start, callback, err) {
 //for each participant for all keys in looggedKeys
 
 method.getValues = function (participants, keys, loggedKeys, callback) {
+  console.info('$$$$$$$$$$$$$$calling getValues with', participants, keys, loggedKeys, callback);
   var columns = 'participantID, key, value';
 
   var logbook = {};
