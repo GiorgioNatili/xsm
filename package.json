@@ -13,6 +13,7 @@
     "cheerio": "0.15.0",
     "csv": "0.3.7",
     "express": "4.9.4",
+    "forever": "0.13.0",
     "jade": "1.2.0",
     "knox": "0.8.9",
     "levenshtein": "1.0.4",
