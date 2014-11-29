@@ -1,0 +1,20 @@
+/* line 1, ../../../app/styles/widgets/dialogs.scss */
+.dialog {
+  width: 200px;
+  margin: 20px auto;
+  height: auto;
+}
+/* line 6, ../../../app/styles/widgets/dialogs.scss */
+.dialog p, .dialog h1 {
+  padding-bottom: 18px;
+}
+/* line 9, ../../../app/styles/widgets/dialogs.scss */
+.dialog h1 {
+  font-size: 12px;
+}
+/* line 12, ../../../app/styles/widgets/dialogs.scss */
+.dialog .cancel {
+  position: relative;
+  top: -6px;
+  padding-left: 36px;
+}

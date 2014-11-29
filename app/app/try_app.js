@@ -1,4 +1,4 @@
-var Server = require('./Server');
+var Server = require('./server');
 var DB = require('../db');
 var isUpdated = require('./is_updated');
 var survey = require('../survey');

@@ -1,0 +1,224 @@
+/* line 37, ../../../app/styles/sections/tfb.scss */
+.tfb-wrap {
+  background-color: white;
+  width: 100%;
+  overflow: auto;
+}
+
+/* line 43, ../../../app/styles/sections/tfb.scss */
+.tfb {
+  position: relative;
+  font-family: fira, "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
+  -webkit-font-feature-settings: "tnum" 1;
+  -webkit-user-select: none;
+  line-height: 18px;
+  font-size: 11px;
+}
+/* line 51, ../../../app/styles/sections/tfb.scss */
+.tfb .overlay-wrap {
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+}
+/* line 56, ../../../app/styles/sections/tfb.scss */
+.tfb div.overlay {
+  width: 468px;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 12px;
+  padding-bottom: 0px;
+  line-height: 24px;
+  font-size: 20px;
+}
+/* line 63, ../../../app/styles/sections/tfb.scss */
+.tfb div.overlay a {
+  margin-right: 20px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  padding: 12px;
+  display: inline-block;
+  color: white;
+  background-color: #4A90E2;
+  white-space: nowrap;
+}
+/* line 73, ../../../app/styles/sections/tfb.scss */
+.tfb div.overlay a.right {
+  background-color: #F5A623;
+}
+/* line 76, ../../../app/styles/sections/tfb.scss */
+.tfb div.overlay .drug {
+  margin: 2px 0px;
+}
+/* line 79, ../../../app/styles/sections/tfb.scss */
+.tfb div.overlay input {
+  font-size: 20px;
+}
+/* line 83, ../../../app/styles/sections/tfb.scss */
+.tfb .error {
+  color: red;
+  white-space: nowrap;
+}
+/* line 87, ../../../app/styles/sections/tfb.scss */
+.tfb .calendar {
+  line-height: 14px;
+  width: 100%;
+  margin-top: 50px;
+  table-layout: fixed;
+  border-collapse: separate;
+}
+/* line 94, ../../../app/styles/sections/tfb.scss */
+.tfb .calendar tr, .tfb .calendar tbody {
+  width: 100%;
+}
+/* line 97, ../../../app/styles/sections/tfb.scss */
+.tfb .calendar td {
+  width: 468px / 7px;
+  height: 45px;
+  border-top: 1px solid #efefef;
+}
+/* line 102, ../../../app/styles/sections/tfb.scss */
+.tfb .calendar tr.monthHead {
+  font-family: firasc;
+  text-align: center;
+  vertical-align: bottom;
+}
+/* line 106, ../../../app/styles/sections/tfb.scss */
+.tfb .calendar tr.monthHead td {
+  padding-bottom: 12px;
+}
+/* line 110, ../../../app/styles/sections/tfb.scss */
+.tfb .calendar tr.week td {
+  vertical-align: text-top;
+  padding: 0px 4px;
+}
+/* line 114, ../../../app/styles/sections/tfb.scss */
+.tfb .calendar .weekend {
+  background: rgba(0, 0, 0, 0.03);
+}
+/* line 117, ../../../app/styles/sections/tfb.scss */
+.tfb .calendar .line {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+/* line 123, ../../../app/styles/sections/tfb.scss */
+.tfb .calendar .selectable:hover {
+  background-color: #CDE2FA;
+}
+/* line 128, ../../../app/styles/sections/tfb.scss */
+.tfb .calendar.weekMode .day:not(.selected) {
+  opacity: .1;
+}
+/* line 131, ../../../app/styles/sections/tfb.scss */
+.tfb .calendar.weekMode .outOfMonth {
+  opacity: .1;
+}
+/* line 136, ../../../app/styles/sections/tfb.scss */
+.tfb .calendar:not(.weekMode) .selected {
+  background-color: #CDE2FA;
+}
+/* line 139, ../../../app/styles/sections/tfb.scss */
+.tfb .calendar:not(.weekMode) .null {
+  opacity: .1;
+}
+/* line 2, ../../../app/styles/sections/tfb.scss */
+.tfb .calendar .selectable.monthHead .title {
+  display: inline-block;
+  white-space: nowrap;
+  background-color: #ccc;
+  background-image: linear-gradient(top, #eeeeee, #cccccc);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#eeeeee', EndColorStr='#cccccc');
+  border: 1px solid #777;
+  padding: 0 1.5em;
+  margin: 0.5em;
+  font: bold 1em/2em Arial, Helvetica;
+  text-decoration: none;
+  color: #333;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
+  border-radius: .2em;
+  box-shadow: 0 0 1px 1px rgba(255, 255, 255, 0.8) inset, 0 1px 0 rgba(0, 0, 0, 0.3);
+}
+/* line 19, ../../../app/styles/sections/tfb.scss */
+.tfb .calendar .selectable.monthHead .title:hover {
+  background-color: #ddd;
+  background-image: linear-gradient(top, #fafafa, #dddddd);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#fafafa', EndColorStr='#dddddd');
+}
+/* line 25, ../../../app/styles/sections/tfb.scss */
+.tfb .calendar .selectable.monthHead .title:active {
+  box-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.3) inset;
+  position: relative;
+  top: 1px;
+}
+/* line 31, ../../../app/styles/sections/tfb.scss */
+.tfb .calendar .selectable.monthHead .title:focus {
+  outline: 0;
+  background: #fafafa;
+}
+/* line 146, ../../../app/styles/sections/tfb.scss */
+.tfb .calendar .event {
+  color: #4A90E2;
+}
+/* line 149, ../../../app/styles/sections/tfb.scss */
+.tfb .calendar .labs .alc {
+  color: #9d0214;
+}
+/* line 152, ../../../app/styles/sections/tfb.scss */
+.tfb .calendar .vals .alc {
+  color: #D0021B;
+}
+/* line 155, ../../../app/styles/sections/tfb.scss */
+.tfb .calendar .vals .tob {
+  color: #F5A623;
+}
+/* line 158, ../../../app/styles/sections/tfb.scss */
+.tfb .calendar .labs .tob {
+  color: #794e06;
+}
+/* line 161, ../../../app/styles/sections/tfb.scss */
+.tfb .calendar .labs .pot {
+  color: #64a71a;
+}
+/* line 164, ../../../app/styles/sections/tfb.scss */
+.tfb .calendar .vals .oth {
+  color: #9013FE;
+}
+/* line 167, ../../../app/styles/sections/tfb.scss */
+.tfb .calendar .labs .oth {
+  color: #5b01aa;
+}
+/* line 170, ../../../app/styles/sections/tfb.scss */
+.tfb .calendar .vals .pot {
+  color: #7ED321;
+}
+/* line 173, ../../../app/styles/sections/tfb.scss */
+.tfb .calendar .labs span, .tfb .calendar .vals span {
+  display: inline-block;
+  width: 14.71429px;
+  text-align: center;
+}
+
+@media only screen and (min-width: 468px) {
+  /* line 182, ../../../app/styles/sections/tfb.scss */
+  .tfb {
+    width: 468px;
+    margin: auto;
+  }
+}
+@media only screen and (min-width: 956px) {
+  /* line 189, ../../../app/styles/sections/tfb.scss */
+  .tfb {
+    width: 836px;
+    margin: auto;
+  }
+  /* line 192, ../../../app/styles/sections/tfb.scss */
+  .tfb div.overlay {
+    width: 386px !important;
+  }
+
+  /* line 196, ../../../app/styles/sections/tfb.scss */
+  .calendar {
+    width: 486px !important;
+    margin-left: 386px !important;
+    margin-top: 0px !important;
+  }
+}
