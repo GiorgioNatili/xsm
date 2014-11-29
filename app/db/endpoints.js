@@ -48,6 +48,13 @@ module.exports = function (app, BFT) {
       BFT.setMeta('participantSeq', oldId, idIncremented);
     });
   });
+  //TODO implement fail function
+
+  //TODO improve security of this url
+  app.get('/asdfj2DLSKJ39f/generate_token', function(request, response, next){
+    //TODO GN return survey url with token
+  });
+
   //TODO GN add endpoints to generate a survey url
   app.get('/db/participants/:id', function (request, response, next) {
     //TODO GN validate that this user has access to this id
