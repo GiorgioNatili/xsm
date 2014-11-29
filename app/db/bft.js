@@ -3,6 +3,7 @@ var _ = require('underscore');
 var sqlite3 = require("sqlite3").verbose();
 var levenshtein = require('levenshtein');
 var constants = require('../constants');
+var randtoken = require('rand-token');
 
 function BFT(dbFile, initCallback) {
   var dbExists = fs.existsSync(dbFile);
@@ -51,6 +52,9 @@ method.init = function (callback) {
 
     that.db.run("CREATE TABLE META (key TEXT PRIMARY KEY, value TEXT)");
 
+    that.db.run("CREATE TABLE LOGINS (token TEXT PRIMARY KEY, " +
+      "participantId TEXT)");
+
     that.db.run("CREATE INDEX key_index ON BFT(key)");
     that.db.run("CREATE INDEX copied_index ON BFT(copied)");
     that.db.run("CREATE INDEX participant_index ON BFT(participantID)",
@@ -76,6 +80,22 @@ method.getMeta = function (key, callback, err) {
     );
   }
 };
+
+method.createLogin = function (participantId, callback, err) {
+  if(particpantId){
+    var token = randtoken.generate(16);
+    this.db.run('INSERT INTO LOGINS (token, participantId) VALUES (?, ?)',
+      [token, participantId], logErrOver(callback, err));
+    return token;
+  }else{
+    throw new Error('participantId falsey');
+  }
+}
+
+//pass to callback participantId for login token or call err
+method.getParticipantForToken = function (token, callback, err) {
+  //TODO GN
+}
 
 method.setMeta = function (key, value, callback, err) {
   if (key in this.metaCache) {
