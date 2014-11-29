@@ -19,6 +19,7 @@
     "levenshtein": "1.0.4",
     "mocha": "1.17.1",
     "nightwatch": "0.3.7",
+    "rand-token": "0.2.1",
     "request": "2.34.0",
     "requirejs": "2.1.11",
     "selenium-webdriver": "2.40.0",
