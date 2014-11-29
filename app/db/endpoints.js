@@ -18,6 +18,10 @@ function getId(machineId, seqId, site) {
 
 module.exports = function (app, BFT) {
   app.get('/db/participants', function (request, response, next) {
+    //for now do nothing
+    fail(reponse);
+    return;
+
     var keys = request.query.keys;
     if(keys){
       keys = keys.split(/,/g);
@@ -44,7 +48,9 @@ module.exports = function (app, BFT) {
       BFT.setMeta('participantSeq', oldId, idIncremented);
     });
   });
+  //TODO GN add endpoints to generate a survey url
   app.get('/db/participants/:id', function (request, response, next) {
+    //TODO GN validate that this user has access to this id
     var id = parseInt(request.params.id);
     var logKeys = request.query.logKeys;
     if (logKeys) {
@@ -66,9 +72,17 @@ module.exports = function (app, BFT) {
     BFT.getValues([id], undefined, logKeys, done);
   });
   app.get('/db/meta/:key', function (request, response) {
+    //for now do nothing
+    fail(reponse);
+    return;
+
     BFT.getMeta(request.params.key, _.bind(response.json, response));
   });
   app.post('/db/meta/:key', function (request, response) {
+    //for now do nothing
+    fail(reponse);
+    return;
+
     function done() {
       response.status(200).end();
     }
@@ -80,6 +94,10 @@ module.exports = function (app, BFT) {
     }
   }
   app.post('/db/', function (request, response, next) {
+    //for now do nothing
+    fail(reponse);
+    return;
+
     var r = request.body;
 
     checkDefined(r, 'ra');
