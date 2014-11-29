@@ -20,3 +20,5 @@ exports.COALESCE_DELAY = 1000;
 exports.version = parseInt(
   fs.readFileSync(exports.ROOT + 'app/version.txt'),
   {encoding: 'utf-8'});
+
+exports.token_expiration_days = 14;

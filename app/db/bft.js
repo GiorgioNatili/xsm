@@ -52,8 +52,8 @@ method.init = function (callback) {
 
     that.db.run("CREATE TABLE META (key TEXT PRIMARY KEY, value TEXT)");
 
-    that.db.run("CREATE TABLE LOGINS (token TEXT PRIMARY KEY, " +
-      "participantId TEXT)");
+    that.db.run("CREATE TABLE TOKENS (token TEXT PRIMARY KEY, " +
+      "participantId TEXT, timestamp DATETIME DEFAULT CURRENT_TIMESTAMP)");
 
     that.db.run("CREATE INDEX key_index ON BFT(key)");
     that.db.run("CREATE INDEX copied_index ON BFT(copied)");
@@ -81,18 +81,20 @@ method.getMeta = function (key, callback, err) {
   }
 };
 
-method.createLogin = function (participantId, callback, err) {
+method.createToken = function (participantId, callback, err) {
   if(particpantId){
     var token = randtoken.generate(16);
-    this.db.run('INSERT INTO LOGINS (token, participantId) VALUES (?, ?)',
-      [token, participantId], logErrOver(callback, err));
+    this.db.run('INSERT INTO TOKENS (token, participantId)'+
+      ' VALUES (?, ?)',
+      [token, participantId],
+      logErrOver(callback, err));
     return token;
   }else{
     throw new Error('participantId falsey');
   }
 }
 
-//pass to callback participantId for login token or call err
+//pass to callback participantId for unexpired login token or call err
 method.getParticipantForToken = function (token, callback, err) {
   //TODO GN
 }
