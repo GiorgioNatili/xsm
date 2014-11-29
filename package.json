@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "repository": {
     "type": "git",
-    "url": "https://github.com/amit-bansil/csm.git"
+    "url": "https://github.com/amit-bansil/xsm.git"
   },
   "dependencies": {
     "Faker": "0.7.0",

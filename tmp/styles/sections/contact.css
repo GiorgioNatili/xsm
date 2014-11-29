@@ -1,0 +1,36 @@
+/* line 4, ../../../app/styles/sections/contact.scss */
+.contactWindow .modal-dialog {
+  width: 400px;
+}
+/* line 7, ../../../app/styles/sections/contact.scss */
+.contactWindow .modal-content {
+  padding: 20px;
+  padding-bottom: 0;
+  border-radius: 0;
+  overflow: auto;
+  width: 100%;
+}
+/* line 13, ../../../app/styles/sections/contact.scss */
+.contactWindow textarea {
+  width: 360px;
+  border-top: 1px solid #f8f8f8;
+}
+/* line 17, ../../../app/styles/sections/contact.scss */
+.contactWindow button.btn {
+  float: right;
+}
+/* line 20, ../../../app/styles/sections/contact.scss */
+.contactWindow select {
+  margin-left: 7px;
+}
+/* line 23, ../../../app/styles/sections/contact.scss */
+.contactWindow a.hideLnk {
+  float: right;
+  margin-right: 20px;
+  margin-top: 17px;
+}
+
+/* line 30, ../../../app/styles/sections/contact.scss */
+.modal-backdrop {
+  background-color: rgba(0, 0, 0, 0.25);
+}

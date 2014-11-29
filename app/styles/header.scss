@@ -1,0 +1,91 @@
+@import "library";
+
+header {
+  flex-shrink: 0;
+}
+
+header > .inner {
+  width: $pageWidth;
+  @include hcenter();
+  display: flex;
+  flex-direction: row;
+  .title {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+  }
+  .utils {
+    justify-content: flex-end;
+    flex: 1;
+    padding-right: 16px;
+    display: flex;
+    flex-direction: row;
+  }
+  div, h1, h2 {
+    display: inline-block;
+  }
+  h2 {
+    position: relative;
+    top: 0px;
+  }
+  input {
+    position: relative;
+    top: -4px;
+    right: -12px;
+  }
+}
+
+header > .inner {
+  padding-top: 8px;
+  padding-bottom: 6px;
+  color: black;
+  font-weight: 300;
+  margin-top: 1em;
+  margin-bottom: 5px;
+  font-size: 14px;
+  white-space: nowrap;
+  .title {
+    padding-left: 16px;
+  }
+  .utils {
+    padding-right: 16px;
+    li {
+      padding-left: 24px;
+    }
+  }
+  a {
+    font-weight: 500;
+    margin-left: 12px;
+    text-decoration: underline;
+  }
+  .dangerous {
+    color: $red;
+  }
+  .dropdown a {
+    text-decoration: none;
+  }
+  .dropdown-menu a {
+    margin-left: 0;
+  }
+  h1 {
+    font-weight: 700;
+    font-size: 12px;
+    color: black;
+  }
+  h2 {
+    font-weight: 300;
+    font-size: 18px;
+    font-style: italic;
+    color: black;
+    padding-left: 3px;
+    padding-right: 12px;
+  }
+  input {
+    padding: 4px;
+    margin: 0;
+    background: rgba(white, .8);
+    padding-left: 12px;
+    margin-right: 12px;
+    width: 200px;
+  }
+}
